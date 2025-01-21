@@ -17,3 +17,16 @@ export interface NavLinks {
   slug: { current: string };
   label: string;
 }
+
+export interface HeroTypes {
+  _id: string;
+  mainText: string;
+  heroImage: string;
+  buttonText: ButtonText[];
+}
+
+export interface ButtonText {
+  label: string;
+  _key: string;
+  slug: { current: string };
+}
