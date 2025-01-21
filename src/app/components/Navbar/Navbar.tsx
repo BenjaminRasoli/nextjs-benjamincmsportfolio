@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { useState, useEffect } from "react";
 import { NavbarTypes, SocialMedia, NavLinks } from "@/types";
 import { urlFor } from "@/sanity/sanity.query";
+import { motion } from "framer-motion";
 
 function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,7 +32,13 @@ function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
       )}
     >
       {navbar.map((item) => (
-        <div key={item._id} className="flex w-full justify-between sticky">
+        <motion.div
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          key={item._id}
+          className="flex w-full justify-between sticky"
+        >
           <div className="flex flex-col items-start space-y-4">
             <h1 className="text-xl font-bold">{item.mainTitle}</h1>
 
@@ -67,7 +74,7 @@ function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );
