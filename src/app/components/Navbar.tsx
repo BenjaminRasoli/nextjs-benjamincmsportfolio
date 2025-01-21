@@ -13,20 +13,11 @@ async function Navbar() {
     options
   );
 
-  console.log(navbar);
-
   return (
     <div>
       {navbar.map((item) => (
-        <ul>
+        <ul key={item._id}>
           <li> {item.mainTitle}</li>
-          <li>
-            {item.links.map((link: any) => (
-              <li>
-                <a href={"#" + link.label}>{link.label}</a>
-              </li>
-            ))}
-          </li>
         </ul>
       ))}
     </div>
