@@ -1,16 +1,9 @@
 "use client";
 import Image from "next/image";
-import imageUrlBuilder from "@sanity/image-url";
 import clsx from "clsx";
 import { useState, useEffect } from "react";
 import { NavbarTypes, SocialMedia, NavLinks } from "@/types";
-import { client } from "@/sanity/client";
-
-const builder = imageUrlBuilder(client);
-
-const urlFor = (source: string) => {
-  return builder.image(source);
-};
+import { urlFor } from "@/sanity/sanity.query";
 
 function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,7 +19,6 @@ function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [isScrolled]);
-  console.log(navbar);
 
   return (
     <div
