@@ -13,7 +13,7 @@ function Hero({ hero }: { hero: HeroTypes[] }) {
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 1, delay: 1.5 }}
             className="w-72 relative mx-auto mb-8"
           >
             <Image
@@ -28,8 +28,8 @@ function Hero({ hero }: { hero: HeroTypes[] }) {
           <motion.h1
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="text-7xl font-extrabold text-center mb-6"
+            transition={{ duration: 1, delay: 1.5 }}
+            className="text-7xl font-extrabold text-center mb-6 leading-snug"
           >
             {item.mainText}
           </motion.h1>
@@ -37,7 +37,7 @@ function Hero({ hero }: { hero: HeroTypes[] }) {
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            transition={{ duration: 1, delay: 1.5 }}
             className="flex justify-center space-x-4 mt-4"
           >
             {item.buttonText.map((buttonText: ButtonText) => (

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import NavbarServer from "./components/Navbar/NavbarServer";
+import ScreenReveal from "./components/screenReveal/screenReveal";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,8 +23,10 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-tertiary">
         <div className="container">
-          <NavbarServer />
-          {children}
+          <ScreenReveal>
+            <NavbarServer />
+            {children}
+          </ScreenReveal>
         </div>
       </body>
     </html>
