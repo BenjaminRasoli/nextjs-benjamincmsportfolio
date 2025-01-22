@@ -30,3 +30,15 @@ export interface ButtonText {
   _key: string;
   slug: { current: string };
 }
+
+export interface AboutMeTypes {
+  _id: string;
+  mainSmallText: string;
+  mainBigText: string;
+  aboueMeText: string;
+}
+
+ export interface ModelProps {
+  scale: number;
+  position?: [number, number, number];
+}
