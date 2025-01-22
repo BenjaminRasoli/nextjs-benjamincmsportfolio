@@ -8,7 +8,7 @@ import Laptop3dModel from "../Canvas/Laptop";
 function AboutMe({ about }: { about: AboutMeTypes[] }) {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.4,
   });
 
   return (
@@ -49,11 +49,17 @@ function AboutMe({ about }: { about: AboutMeTypes[] }) {
               </motion.p>
             </div>
 
-            <div className="flex items-center justify-center sm:mt-24">
+            <motion.div
+              initial={{ x: 50, opacity: 0 }}
+              animate={inView ? { x: 0, opacity: 1 } : { x: 50, opacity: 0 }}
+              transition={{ duration: 1, delay: 0.1 }}
+              ref={ref}
+              className="flex items-center justify-center sm:mt-24"
+            >
               <div className="h-[500px]">
                 <Laptop3dModel />
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         ))}
       </div>
