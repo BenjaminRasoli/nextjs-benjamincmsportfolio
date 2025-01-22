@@ -3,12 +3,14 @@
 //   && defined(slug.current)
 // ]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt}`;
 
+import AboutServer from "./components/AboutMe/AboutMeServer";
 import HeroServer from "./components/Hero/HeroServer";
 
 function Page() {
   return (
     <main>
       <HeroServer />
+      <AboutServer />
     </main>
   );
 }

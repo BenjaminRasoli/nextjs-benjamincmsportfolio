@@ -21,13 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-tertiary">
-        <div className="container">
-          <ScreenReveal>
-            <NavbarServer />
-            {children}
-          </ScreenReveal>
-        </div>
+      <body className="bg-black">
+        <ScreenReveal>
+          <NavbarServer />
+          {children}
+        </ScreenReveal>
       </body>
     </html>
   );

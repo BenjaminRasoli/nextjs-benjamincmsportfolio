@@ -1,8 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { body } from "framer-motion/client";
-
 function BlackScreenReveal({ children }: { children: React.ReactNode }) {
   const [isRevealed, setIsRevealed] = useState(false);
 
@@ -25,7 +23,7 @@ function BlackScreenReveal({ children }: { children: React.ReactNode }) {
           initial={{ y: 0 }}
           animate={{ y: "-100%" }}
           transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="fixed top-0 left-0 w-full h-full bg-primary z-50"
+          className="fixed top-0 left-0 w-full h-full bg-slate-800 z-50"
         />
       )}
 
