@@ -53,9 +53,9 @@ function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
           }
         )}
       >
-        {navbar.map((item) => (
+        {navbar.map((item: NavbarTypes) => (
           <motion.div
-            initial={{ y: -50, opacity: 0 }}
+            initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 1.5 }}
             key={item._id}
@@ -116,9 +116,9 @@ function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ x: -50, opacity: 0 }}
+            initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            exit={{ x: -50, opacity: 0 }}
+            exit={{ x: 50, opacity: 0 }}
             transition={{ duration: 0.6 }}
             className=" z-40 p-4 px-10 absolute top-0  w-full h-screen bg-secondary text-white flex flex-col  justify-start "
           >
@@ -129,6 +129,7 @@ function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
                     <a
                       className="font-bold relative hover:text-tertiary cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-500 before:absolute before:bg-tertiary before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-500 after:absolute after:bg-tertiary after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%]"
                       href={link.slug.current}
+                      onClick={() => setOpen(false)}
                     >
                       {link.label}
                     </a>

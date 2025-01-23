@@ -15,7 +15,7 @@ function Hero({ hero }: { hero: HeroTypes[] }) {
         </div>
       </div>
 
-      <div className="container ">
+      <div  className="container">
         {hero.map((item) => (
           <div key={item._id} className="text-center bg-transparent rounded-xl">
             <motion.div

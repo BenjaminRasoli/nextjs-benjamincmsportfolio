@@ -31,14 +31,49 @@ export interface ButtonText {
   slug: { current: string };
 }
 
-export interface AboutMeTypes {
-  _id: string;
-  mainSmallText: string;
-  mainBigText: string;
-  aboueMeText: string;
+export interface overViewText {
+  smallText: string;
+  bigText: string;
+  longText: string;
 }
 
- export interface ModelProps {
+export interface AboutMeTypes {
+  _id: string;
+  aboutText: overViewText;
+}
+
+export interface ModelProps {
   scale: number;
   position?: [number, number, number];
+}
+
+export interface ProjectsType {
+  _id: string;
+  projectName: string;
+  projectLinks: ProjectsLinks[];
+  projectTechnologies: ProjectTechnologies[];
+  image: string;
+}
+
+export interface ProjectTechnologies {
+  technology: string;
+  _key: string;
+}
+
+export interface ProjectsLinks {
+  linkImage: string;
+  projectLink: { current: string };
+  label: string;
+  _key: string;
+}
+
+export interface ProjectsText {
+  _id: string;
+  projectText: ProjectText;
+}
+
+export interface ProjectText {
+  longText: string;
+  smallText: string;
+  bigText: string;
 }

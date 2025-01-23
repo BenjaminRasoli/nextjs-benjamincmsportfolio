@@ -10,6 +10,9 @@ export const urlFor = (source: string) => {
 const NAVBAR_QUERY = `*[_type == "navbar"]`;
 const HERO_QUERY = `*[_type == "hero"]`;
 const ABOUT_ME_QUERY = `*[_type == "aboutMe"]`;
+const PROJECTS_QUERY = `*[_type == "projects"]`;
+const PROJECTS_TEXT_QUERY = `*[_type == "projectsText"]`;
+
 
 const options = { next: { revalidate: 30 } };
 
@@ -23,4 +26,12 @@ export async function getHero() {
 
 export async function getAboutMe() {
   return client.fetch(ABOUT_ME_QUERY, {}, options);
+}
+
+export async function getProjects() {
+  return client.fetch(PROJECTS_QUERY, {}, options);
+}
+
+export async function getProjectText() {
+  return client.fetch(PROJECTS_TEXT_QUERY, {}, options);
 }

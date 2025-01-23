@@ -1,16 +1,13 @@
-// const POSTS_QUERY = `*[
-//   _type == "post"
-//   && defined(slug.current)
-// ]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt}`;
-
 import AboutServer from "./components/AboutMe/AboutMeServer";
 import HeroServer from "./components/Hero/HeroServer";
+import ProjectServer from "./components/Projects/ProjectsServer";
 
 function Page() {
   return (
     <main>
       <HeroServer />
       <AboutServer />
+      <ProjectServer />
     </main>
   );
 }
