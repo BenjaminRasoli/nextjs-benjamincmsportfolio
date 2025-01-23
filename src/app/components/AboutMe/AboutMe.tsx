@@ -8,53 +8,50 @@ import Laptop3dModel from "../Canvas/Laptop";
 function AboutMe({ about }: { about: AboutMeTypes[] }) {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.4,
+    threshold: 0.6,
   });
 
   return (
-    <div className="bg-secondary pt-16 pb-16">
+    <div id="about" className="bg-secondary pt-16 pb-16 scroll-m-20">
       <div className="container">
-        {about.map((item) => (
+        {about.map((aboutText) => (
           <motion.div
-            key={item._id}
-            className="flex flex-col lg:flex-row justify-between items-center"
+            key={aboutText._id}
+            className="flex flex-col  lg:flex-row justify-between items-center"
           >
             <div className="flex-1 max-w-3xl">
               <motion.p
-                initial={{ x: -50, opacity: 0 }}
-                animate={inView ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
+                initial={{ y: -50, opacity: 0 }}
+                animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
                 transition={{ duration: 1, delay: 0.1 }}
-                ref={ref}
                 className="text-p text-white"
               >
-                {item.mainSmallText}
+                {aboutText.aboutText.smallText}
               </motion.p>
               <motion.h1
-                initial={{ x: 50, opacity: 0 }}
-                animate={inView ? { x: 0, opacity: 1 } : { x: 50, opacity: 0 }}
+                initial={{ y: 50, opacity: 0 }}
+                animate={inView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
                 transition={{ duration: 1, delay: 0.1 }}
-                ref={ref}
                 className="text-h1 text-tertiary pb-6"
               >
-                {item.mainBigText}
+                {aboutText.aboutText.bigText}
               </motion.h1>
               <motion.p
-                initial={{ x: -50, opacity: 0 }}
-                animate={inView ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
+                initial={{ y: -50, opacity: 0 }}
+                animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
                 transition={{ duration: 1, delay: 0.1 }}
                 ref={ref}
-                className="text-white "
+                className="text-white pb-10"
               >
-                {item.aboueMeText}
+                {aboutText.aboutText.longText}
               </motion.p>
             </div>
 
             <motion.div
-              initial={{ x: 50, opacity: 0 }}
-              animate={inView ? { x: 0, opacity: 1 } : { x: 50, opacity: 0 }}
+              initial={{ y: 50, opacity: 0 }}
+              animate={inView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
               transition={{ duration: 1, delay: 0.1 }}
-              ref={ref}
-              className="flex items-center justify-center sm:mt-24"
+              className="flex items-center justify-center mt-24 h-[280px]"
             >
               <div className="h-[500px]">
                 <Laptop3dModel />
