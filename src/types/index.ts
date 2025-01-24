@@ -77,3 +77,28 @@ export interface ProjectText {
   smallText: string;
   bigText: string;
 }
+
+export interface WorksText {
+  _id: string;
+  workText: WorkText;
+}
+
+export interface WorkText {
+  longText: string;
+  smallText: string;
+  bigText: string;
+}
+
+export interface WorkType {
+  _id: string;
+  timeLineText: TimeLineType[];
+  image: string;
+  date: string;
+}
+
+export interface TimeLineType {
+  _key: string;
+  title: string;
+  description: string;
+  location: string;
+}
