@@ -14,6 +14,7 @@ const PROJECTS_QUERY = `*[_type == "projects"]`;
 const PROJECTS_TEXT_QUERY = `*[_type == "projectsText"]`;
 const WORK_TEXT_QUERY = `*[_type == "workText"]`;
 const WORK_QUERY = `*[_type == "work"]`;
+const CONTAT_QUERY = `*[_type == "contact"]`;
 
 const options = { next: { revalidate: 30 } };
 
@@ -43,4 +44,8 @@ export async function getWorkText() {
 
 export async function getWork() {
   return client.fetch(WORK_QUERY, {}, options);
+}
+
+export async function getContact() {
+  return client.fetch(CONTAT_QUERY, {}, options);
 }

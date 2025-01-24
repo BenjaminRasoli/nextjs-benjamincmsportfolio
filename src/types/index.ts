@@ -102,3 +102,16 @@ export interface TimeLineType {
   description: string;
   location: string;
 }
+
+export interface ContactTypes {
+  _id: string;
+  contactText: overViewText;
+  contactForm: ContactForm[];
+}
+
+export interface ContactForm {
+  _key: string;
+  label: string;
+  placeHolder: string;
+  type: string;
+}
