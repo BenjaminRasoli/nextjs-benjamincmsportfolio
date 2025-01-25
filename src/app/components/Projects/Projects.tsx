@@ -16,24 +16,10 @@ function Projects({
     triggerOnce: true,
     threshold: 0.4,
   });
-  const { scrollYProgress } = useScroll();
 
   return (
     <div id="project" className="bg-black pt-20 pb-20 scroll-m-20">
-      <motion.div
-        id="scroll-indicator"
-        style={{
-          scaleX: scrollYProgress,
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: 10,
-          originX: 0,
-          zIndex: 10,
-          backgroundColor: "#4F46E5",
-        }}
-      />
+
       <div className="container">
         {projectTextData.map((text) => (
           <div className="max-w-3xl pb-10" key={text._id}>

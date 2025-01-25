@@ -13,6 +13,8 @@ import {
 import { MdOutlineErrorOutline } from "react-icons/md";
 import { ThreeDots } from "react-loader-spinner";
 import axios from "axios";
+import Image from "next/image";
+import { urlFor } from "@/sanity/sanity.query";
 
 function Contact({ contact }: { contact: ContactTypes[] }) {
   const [formData, setFormData] = useState(
@@ -220,20 +222,39 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
                   >
                     <span className="absolute inset-0 bg-white translate-x-[-100%] transition-transform duration-300 ease-in-out group-hover:translate-x-0"></span>
                     <span className="relative z-10 group-hover:text-black flex flex-row items-center gap-1">
-                      Send Message
-                      <span className="pt-1">
-                        <IoIosRocket />
+                      {contactText.contactSendMessageButton.buttonText}
+                      <span className="pt-1 group-hover:filter group-hover:brightness-[0] group-hover:saturate-[100%]">
+                        <Image
+                          src={
+                            urlFor(
+                              contactText.contactSendMessageButton.buttonIcon
+                            ).url() as string
+                          }
+                          alt="social icon"
+                          width={15}
+                          height={30}
+                          className="transition-all duration-300"
+                        />
                       </span>
                     </span>
                   </button>
 
                   <a
-                    href="mailto:benjaminrasoli05@gmail.com"
+                    href={`mailto:${contactText.contactEmail}`}
                     className="ml-4 text-sm sm:text-base text-white hover:opacity-40 flex flex-row items-center gap-1"
                   >
-                    BenjaminRasoli05@gmail.com
+                    {contactText.contactEmail.emailText}
                     <span className="pt-1">
-                      <IoIosMail />
+                      <Image
+                        src={
+                          urlFor(
+                            contactText.contactEmail.emailIcon
+                          ).url() as string
+                        }
+                        alt="social icon"
+                        width={15}
+                        height={30}
+                      />
                     </span>
                   </a>
                 </div>
