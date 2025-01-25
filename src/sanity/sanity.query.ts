@@ -15,6 +15,8 @@ const PROJECTS_TEXT_QUERY = `*[_type == "projectsText"]`;
 const WORK_TEXT_QUERY = `*[_type == "workText"]`;
 const WORK_QUERY = `*[_type == "work"]`;
 const CONTAT_QUERY = `*[_type == "contact"]`;
+const FOOTER_QUERY = `*[_type == "footer"]`;
+
 
 const options = { next: { revalidate: 30 } };
 
@@ -48,4 +50,8 @@ export async function getWork() {
 
 export async function getContact() {
   return client.fetch(CONTAT_QUERY, {}, options);
+}
+
+export async function getFooter() {
+  return client.fetch(FOOTER_QUERY, {}, options);
 }

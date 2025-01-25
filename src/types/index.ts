@@ -106,6 +106,8 @@ export interface TimeLineType {
 export interface ContactTypes {
   _id: string;
   contactText: overViewText;
+  contactSendMessageButton: { buttonText: string; buttonIcon: string };
+  contactEmail: { emailText: string; emailIcon: string };
   contactForm: ContactForm[];
 }
 
@@ -114,4 +116,38 @@ export interface ContactForm {
   label: string;
   placeHolder: string;
   type: string;
+}
+
+export interface FooterTypes {
+  _id: string;
+  copyRightText: string;
+  footerContactTitle: FooterContactTitle[];
+  socialMedia: SocialMedia[];
+  mainTitle: MainTitle[];
+  footerLinksTitle: FooterLinksTitle[];
+}
+
+export interface FooterContactTitle {
+  _key: string;
+  footerContact: string;
+  footerContactValue: string;
+}
+
+export interface SocialMedia {
+  _key: string;
+  platform: string;
+  icon: string;
+  url: string;
+}
+
+export interface MainTitle {
+  _key: string;
+  footerTitle: string;
+  footerTitleType: string;
+}
+
+export interface FooterLinksTitle {
+  _key: string;
+  footerLinksText: string;
+  footerLinks: { current: string };
 }
