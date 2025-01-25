@@ -16,6 +16,7 @@ export interface NavLinks {
   _key: string;
   slug: { current: string };
   label: string;
+  file: { asset: { _ref: string } };
 }
 
 export interface HeroTypes {

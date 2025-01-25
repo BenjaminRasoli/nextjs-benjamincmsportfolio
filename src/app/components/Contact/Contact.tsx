@@ -128,7 +128,6 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
               initial={{ y: -50, opacity: 0 }}
               animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
               transition={{ duration: 1, delay: 0.1 }}
-              ref={ref}
               className="text-p text-white"
             >
               {contactText.contactText.smallText}

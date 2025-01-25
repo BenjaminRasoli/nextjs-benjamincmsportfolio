@@ -5,6 +5,8 @@ function BlackScreenReveal({ children }: { children: React.ReactNode }) {
   const [isRevealed, setIsRevealed] = useState(false);
 
   useEffect(() => {
+        if (typeof window === "undefined") return;
+
     if (!isRevealed) {
       document.body.style.overflow = "hidden";
     }

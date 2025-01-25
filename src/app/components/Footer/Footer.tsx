@@ -1,12 +1,26 @@
+"use client";
 import { urlFor } from "@/sanity/sanity.query";
 import { FooterLinksTitle, FooterTypes, MainTitle, SocialMedia } from "@/types";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export default function Footer({ footerData }: { footerData: any }) {
   const footer = footerData[0];
 
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
+
   return (
-    <footer className="bg-black text-white py-8">
+    <motion.footer
+      initial={{ y: 50, opacity: 0 }}
+      animate={inView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
+      transition={{ duration: 1 }}
+      ref={ref}
+      className="bg-black text-white py-8"
+    >
       <div className="container mx-auto px-4">
         <div className="mb-6">
           <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
@@ -103,6 +117,6 @@ export default function Footer({ footerData }: { footerData: any }) {
           </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

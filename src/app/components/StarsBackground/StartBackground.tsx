@@ -8,6 +8,8 @@ export const StarsBackground = () => {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     initParticlesEngine(async (engine) => {
       await loadFull(engine);
     }).then(() => {
@@ -26,8 +28,8 @@ export const StarsBackground = () => {
       fpsLimit: 60,
       interactivity: {
         events: {
-          onClick: { enable: false },
-          onHover: { enable: false },
+          onClick: { enable: true, mode: "push" },
+          onHover: { enable: true, mode: "repulse" },
         },
       },
       particles: {
@@ -39,12 +41,12 @@ export const StarsBackground = () => {
           enable: true,
           outModes: { default: OutMode.out },
           random: true,
-          speed: 2.5,
+          speed: 0.2,
           straight: false,
         },
         number: {
           density: { enable: true, value_area: 800 },
-          value: 150,
+          value: 250,
         },
         opacity: {
           value: 0.5,
@@ -53,7 +55,7 @@ export const StarsBackground = () => {
           type: "circle",
         },
         size: {
-          value: { min: 1, max: 3 },
+          value: { min: 0.5, max: 1 },
         },
       },
       detectRetina: true,

@@ -41,7 +41,7 @@ export default function PathDrawingShapes() {
           initial={{ pathLength: 0 }}
           animate={inView ? { pathLength: 1 } : { pathLength: 0 }}
           transition={{
-            duration: 2,
+            duration: 1,
             ease: "easeInOut",
           }}
         />
@@ -55,9 +55,9 @@ export default function PathDrawingShapes() {
           initial={{ pathLength: 0 }}
           animate={inView ? { pathLength: 1 } : { pathLength: 0 }}
           transition={{
-            duration: 2.5,
+            duration: 1.5,
             ease: "easeInOut",
-            delay: 2,
+            delay: 1,
           }}
         />
 
@@ -70,9 +70,9 @@ export default function PathDrawingShapes() {
           initial={{ pathLength: 0 }}
           animate={inView ? { pathLength: 1 } : { pathLength: 0 }}
           transition={{
-            duration: 3,
+            duration: 2,
             ease: "easeInOut",
-            delay: 4.5,
+            delay: 2.5,
           }}
         />
       </svg>

@@ -13,9 +13,9 @@
     color: #ffffff;
   }
 }
-
 body {
   overflow-x: hidden;
+  font-family: var(--font-inter);
 }
 
 @layer components {

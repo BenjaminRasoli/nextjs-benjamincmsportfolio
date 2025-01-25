@@ -17,7 +17,6 @@ const WORK_QUERY = `*[_type == "work"]`;
 const CONTAT_QUERY = `*[_type == "contact"]`;
 const FOOTER_QUERY = `*[_type == "footer"]`;
 
-
 const options = { next: { revalidate: 30 } };
 
 export async function getNavbar() {

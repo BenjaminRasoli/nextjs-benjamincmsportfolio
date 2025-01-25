@@ -22,11 +22,13 @@ function Laptop3dModel() {
   const [modelPosition, setModelPosition] = useState([0, -1.4, 0]);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     function handleResize() {
       const newWidth = window.innerWidth;
 
       if (newWidth < 700) {
-        setCanvasSize({ width: 320, height: 400 }); 
+        setCanvasSize({ width: 320, height: 400 });
         setModelScale([0.14, 0.14, 0.14]);
         setModelPosition([0, -1.1, 0]);
       } else {
