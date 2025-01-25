@@ -4,11 +4,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import PathDrawing from "../PathDrawing/PathDrawing";
-import {
-  IoIosRocket,
-  IoIosCheckmarkCircle,
-  IoIosCloseCircle,
-} from "react-icons/io";
+import { IoIosCheckmarkCircle, IoIosCloseCircle } from "react-icons/io";
 import { MdOutlineErrorOutline } from "react-icons/md";
 import { ThreeDots } from "react-loader-spinner";
 import axios from "axios";
