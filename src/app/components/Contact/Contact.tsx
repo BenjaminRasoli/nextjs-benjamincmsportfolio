@@ -113,7 +113,7 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
       setErrors({});
       setFormSuccess(true);
       setLoading(false);
-    } catch (error) {
+    } catch {
       setFormError(true);
       setLoading(false);
     }
