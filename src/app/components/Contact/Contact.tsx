@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import PathDrawing from "../PathDrawing/PathDrawing";
 import {
-  IoIosMail,
   IoIosRocket,
   IoIosCheckmarkCircle,
   IoIosCloseCircle,

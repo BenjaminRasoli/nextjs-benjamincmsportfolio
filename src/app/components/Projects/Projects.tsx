@@ -2,7 +2,7 @@
 import { urlFor } from "@/sanity/sanity.query";
 import { ProjectsText, ProjectsType } from "@/types";
 import Image from "next/image";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 function Projects({
@@ -19,7 +19,6 @@ function Projects({
 
   return (
     <div id="project" className="bg-black pt-20 pb-20 scroll-m-20">
-
       <div className="container">
         {projectTextData.map((text) => (
           <div className="max-w-3xl pb-10" key={text._id}>

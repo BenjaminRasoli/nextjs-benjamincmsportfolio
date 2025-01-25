@@ -2,7 +2,6 @@ import AboutServer from "./components/AboutMe/AboutMeServer";
 import ContactServer from "./components/Contact/ContactServer";
 import HeroServer from "./components/Hero/HeroServer";
 import ProjectServer from "./components/Projects/ProjectsServer";
-import Work from "./components/Work/Work";
 import WorkTextServer from "./components/Work/WorkServer";
 
 function Page() {
