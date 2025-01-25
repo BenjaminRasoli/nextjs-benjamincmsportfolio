@@ -13,6 +13,8 @@ function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
   const [isOpen, setOpen] = useState(false);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
@@ -21,6 +23,12 @@ function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
       setOpen(false);
     };
 
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleWindowResize);
 
@@ -28,13 +36,7 @@ function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleWindowResize);
     };
-  }, []);
-
-  if (isOpen) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "auto";
-  }
+  }, [isOpen]);
 
   return (
     <div

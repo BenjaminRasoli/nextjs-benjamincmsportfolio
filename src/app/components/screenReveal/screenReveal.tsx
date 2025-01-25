@@ -14,7 +14,7 @@ function BlackScreenReveal({ children }: { children: React.ReactNode }) {
     }, 1500);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [isRevealed]);
 
   return (
     <div className="relative">
