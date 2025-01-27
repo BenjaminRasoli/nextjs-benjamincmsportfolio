@@ -78,6 +78,7 @@ function Projects({
                     <a
                       key={link._key}
                       href={link.projectLink.current}
+                      target="_blank"
                       className="relative inline-block px-4 py-2 text-white border-2 border-white rounded overflow-hidden transition-all duration-300 group/button"
                     >
                       <span className="absolute inset-0 w-0 bg-white lg:group-hover/button:w-full transition-all duration-300 ease-in-out"></span>
