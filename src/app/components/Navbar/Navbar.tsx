@@ -58,7 +58,7 @@ function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
     >
       <div
         className={clsx(
-          "container max-w-[1100px] 2xl:max-w-[1500px] p-4 flex w-full items-start justify-between text-white rounded-lg transition-all",
+          "container max-w-[1000px] 2xl:max-w-[1500px] p-4 flex w-full items-start justify-between text-white rounded-lg transition-all",
           {
             "bg-transparent backdrop-blur-3xl": isScrolled && !isOpen,
             "bg-transparent": !isScrolled || isOpen,

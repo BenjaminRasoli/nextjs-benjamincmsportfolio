@@ -21,7 +21,7 @@ export default function Footer({ footerData }: { footerData: any }) {
       ref={ref}
       className="bg-black text-white pb-8"
     >
-      <div className="container max-w-[1100px] 2xl:max-w-[1500px] mx-auto px-4">
+      <div className="container max-w-[1000px] 2xl:max-w-[1500px] mx-auto px-4">
         <div className="mb-6">
           <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
         </div>

@@ -16,7 +16,7 @@ function AboutMe({ about }: { about: AboutMeTypes[] }) {
       id="about"
       className="bg-gradient-to-b from-black to-secondary pt-16 pb-16 scroll-m-20 px-5"
     >
-      <div className="container max-w-[1100px] 2xl:max-w-[1500px]">
+      <div className="container max-w-[1000px] 2xl:max-w-[1500px]">
         {about.map((aboutText) => (
           <motion.div
             key={aboutText._id}
