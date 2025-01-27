@@ -10,10 +10,10 @@ export const urlFor = (source: string) => {
 const NAVBAR_QUERY = `*[_type == "navbar"]`;
 const HERO_QUERY = `*[_type == "hero"]`;
 const ABOUT_ME_QUERY = `*[_type == "aboutMe"]`;
-const PROJECTS_QUERY = `*[_type == "projects"]`;
+const PROJECTS_QUERY = `*[_type == "projects"] | order(position asc)`;
 const PROJECTS_TEXT_QUERY = `*[_type == "projectsText"]`;
 const WORK_TEXT_QUERY = `*[_type == "workText"]`;
-const WORK_QUERY = `*[_type == "work"]`;
+const WORK_QUERY = `*[_type == "work"] | order(position asc)`;
 const CONTAT_QUERY = `*[_type == "contact"]`;
 const FOOTER_QUERY = `*[_type == "footer"]`;
 
