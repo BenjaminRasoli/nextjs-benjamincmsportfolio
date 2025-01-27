@@ -60,9 +60,10 @@ function Laptop3dModel() {
           height: `${canvasSize.height}px`,
           width: `${canvasSize.width}px`,
           touchAction: "none",
+          position: "relative",
+          background: "transparent",
         }}
       >
-        <color attach="background" args={["#060918"]} />
         <ambientLight intensity={1} />
         <directionalLight position={[2, 10, 5]} intensity={1} />
         <OrbitControls

@@ -120,8 +120,11 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
   };
 
   return (
-    <div id="contact" className="bg-black pt-16 pb-16 scroll-m-20">
-      <div className="container flex-col lg:flex-row flex justify-center lg:justify-between">
+    <div
+      id="contact"
+      className="bg-gradient-to-b from-secondary via-black pt-16 scroll-m-20 px-5"
+    >
+      <div className="container max-w-[1100px] 2xl:max-w-[1500px] flex-col lg:flex-row flex justify-center lg:justify-between">
         {contact.map((contactText: ContactTypes) => (
           <div className="pb-10" key={contactText._id}>
             <motion.p
@@ -145,7 +148,7 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
               <form onSubmit={(e) => handleForm(e)} noValidate>
                 {contactText.contactForm.map((contactForm: ContactForm) => (
                   <div
-                    className="flex flex-col pb-5 pt-5"
+                    className="flex flex-col pb-3 pt-3  "
                     key={contactForm._key}
                   >
                     <label className="pb-2">{contactForm.label}</label>
@@ -235,7 +238,7 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
 
                   <a
                     href={`mailto:${contactText.contactEmail}`}
-                    className="ml-4 text-sm sm:text-base text-white hover:opacity-40 flex flex-row items-center gap-1"
+                    className="ml-4 text-sm sm:text-base text-white hover:opacity-20 flex flex-row items-center gap-1"
                   >
                     {contactText.contactEmail.emailText}
                     <span className="pt-1">

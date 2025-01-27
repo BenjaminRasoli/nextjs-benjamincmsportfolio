@@ -7,37 +7,39 @@ import { motion } from "framer-motion";
 import { StarsBackground } from "../StarsBackground/StartBackground";
 
 function Hero({ hero }: { hero: HeroTypes[] }) {
+  const isFirefox =
+    typeof navigator !== "undefined" &&
+    navigator.userAgent.toLowerCase().includes("firefox");
+
   return (
-    <div className="relative w-full pt-10 xl:pt-36 pb-36 flex flex-col justify-center items-center text-white">
+    <div className="relative  h-[100vh] w-full pt-5 pb-36 flex flex-col justify-center items-center text-white">
       <div className="absolute  inset-0 -z-10">
-        <div className="w-full h-full">
-          <StarsBackground />
-        </div>
+        <div className="w-full h-full">{!isFirefox && <StarsBackground />}</div>
       </div>
 
-      <div  className="container">
+      <div className="container max-w-[1100px]">
         {hero.map((item) => (
           <div key={item._id} className="text-center bg-transparent rounded-xl">
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1, delay: 1.5 }}
-              className="w-72 relative mx-auto mb-8"
+              transition={{ duration: 1, delay: 1 }}
+              className="w-full relative flex justify-center mx-auto mb-5"
             >
               <Image
                 src={urlFor(item.heroImage).url()}
-                width={300}
+                width={200}
                 height={400}
                 alt={item.heroImage}
-                className="object-cover xl:w-full xl:h-full rounded-full "
+                className="xl:h-full rounded-full "
               />
             </motion.div>
 
             <motion.h1
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1, delay: 1.5 }}
-              className="text-5xl xl:text-7xl font-extrabold text-center mb-6 leading-[60px] xl:leading-[90px]"
+              transition={{ duration: 1, delay: 1 }}
+              className="text-5xl xl:text-6xl font-extrabold text-center mb-6 leading-[60px] xl:leading-[90px]"
             >
               {item.mainText}
             </motion.h1>
@@ -45,7 +47,7 @@ function Hero({ hero }: { hero: HeroTypes[] }) {
             <motion.div
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1, delay: 1.5 }}
+              transition={{ duration: 1, delay: 1 }}
               className="flex justify-center space-x-4"
             >
               {item.buttonText.map((buttonText: ButtonText) => (

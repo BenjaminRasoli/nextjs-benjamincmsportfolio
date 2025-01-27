@@ -56,8 +56,11 @@ function Work({ workText, work }: { workText: WorksText[]; work: WorkType[] }) {
     threshold: 0.4,
   });
   return (
-    <div id="work" className="bg-secondary pt-20 pb-20 scroll-m-20">
-      <div className="container">
+    <div
+      id="work"
+      className="bg-gradient-to-b from-black to-secondary pt-16 pb-16 scroll-m-20 px-5"
+    >
+      <div className="container max-w-[1100px] 2xl:max-w-[1500px]">
         {workText.map((workText) => (
           <div className="max-w-3xl pb-10" key={workText._id}>
             <motion.p

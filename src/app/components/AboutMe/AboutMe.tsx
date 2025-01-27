@@ -12,8 +12,11 @@ function AboutMe({ about }: { about: AboutMeTypes[] }) {
   });
 
   return (
-    <div id="about" className="bg-secondary pt-16 pb-16 scroll-m-20">
-      <div className="container">
+    <div
+      id="about"
+      className="bg-gradient-to-b from-black to-secondary pt-16 pb-16 scroll-m-20 px-5"
+    >
+      <div className="container max-w-[1100px] 2xl:max-w-[1500px]">
         {about.map((aboutText) => (
           <motion.div
             key={aboutText._id}
@@ -53,7 +56,7 @@ function AboutMe({ about }: { about: AboutMeTypes[] }) {
               transition={{ duration: 1, delay: 0.1 }}
               className="flex items-center justify-center mt-24 h-[280px]"
             >
-              <div className="h-[500px]">
+              <div className="h-[500px] w-full">
                 <Laptop3dModel />
               </div>
             </motion.div>

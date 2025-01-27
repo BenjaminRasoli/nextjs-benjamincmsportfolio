@@ -18,8 +18,11 @@ function Projects({
   });
 
   return (
-    <div id="project" className="bg-black pt-20 pb-20 scroll-m-20">
-      <div className="container">
+    <div
+      id="project"
+      className="bg-gradient-to-b from-secondary via-black pt-16 pb-16 scroll-m-20 px-5"
+    >
+      <div className="container max-w-[1100px] 2xl:max-w-[1500px]">
         {projectTextData.map((text) => (
           <div className="max-w-3xl pb-10" key={text._id}>
             <motion.p
@@ -55,7 +58,7 @@ function Projects({
               initial={{ y: 50 }}
               whileInView={{ y: 0 }}
               viewport={{ once: true }}
-              className="group relative w-[420px] h-[350px] flex justify-center items-center flex-col overflow-hidden"
+              className="group relative w-[400px] h-[350px] flex justify-center items-center flex-col overflow-hidden"
               key={project._id}
             >
               <Image

@@ -9,7 +9,7 @@ export default function Footer({ footerData }: { footerData: any }) {
   const footer = footerData[0];
 
   const { ref, inView } = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.1,
   });
 
@@ -19,9 +19,9 @@ export default function Footer({ footerData }: { footerData: any }) {
       animate={inView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
       transition={{ duration: 1 }}
       ref={ref}
-      className="bg-black text-white py-8"
+      className="bg-black text-white pb-8"
     >
-      <div className="container mx-auto px-4">
+      <div className="container max-w-[1100px] 2xl:max-w-[1500px] mx-auto px-4">
         <div className="mb-6">
           <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
         </div>
@@ -65,7 +65,7 @@ export default function Footer({ footerData }: { footerData: any }) {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative pb-1 hover:text-tertiary cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-500 before:absolute before:bg-tertiary before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-500 after:absolute after:bg-tertiary after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%]"
+                  className="relative pb-1 hover:opacity-20 transition-all"
                 >
                   <Image
                     src={urlFor(social.icon).url() as string}

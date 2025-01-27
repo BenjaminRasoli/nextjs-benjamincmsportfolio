@@ -10,7 +10,7 @@ export default function PathDrawingShapes() {
   const { scrollYProgress } = useScroll();
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-black">
+    <div className="flex items-start justify-center lg:justify-end w-full min-h-screen bg-transparent lg:pb-20">
       <motion.div
         id="scroll-indicator"
         style={{
@@ -28,7 +28,7 @@ export default function PathDrawingShapes() {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 200 400"
-        className="w-full h-auto"
+        className="w-96 h-auto lg:h-[600px]"
       >
         <motion.circle
           cx="100"
@@ -41,7 +41,7 @@ export default function PathDrawingShapes() {
           initial={{ pathLength: 0 }}
           animate={inView ? { pathLength: 1 } : { pathLength: 0 }}
           transition={{
-            duration: 1,
+            duration: 0.8,
             ease: "easeInOut",
           }}
         />
@@ -55,9 +55,9 @@ export default function PathDrawingShapes() {
           initial={{ pathLength: 0 }}
           animate={inView ? { pathLength: 1 } : { pathLength: 0 }}
           transition={{
-            duration: 1.5,
+            duration: 1,
             ease: "easeInOut",
-            delay: 1,
+            delay: 0.8,
           }}
         />
 
@@ -70,9 +70,9 @@ export default function PathDrawingShapes() {
           initial={{ pathLength: 0 }}
           animate={inView ? { pathLength: 1 } : { pathLength: 0 }}
           transition={{
-            duration: 2,
+            duration: 1.5,
             ease: "easeInOut",
-            delay: 2.5,
+            delay: 1.8,
           }}
         />
       </svg>

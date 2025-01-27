@@ -16,7 +16,7 @@ function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
     if (typeof window === "undefined") return;
 
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
 
     const handleWindowResize = () => {
@@ -24,9 +24,9 @@ function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
     };
 
     if (isOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflowY = "hidden";
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflowY = "auto";
     }
 
     window.addEventListener("scroll", handleScroll);
@@ -53,13 +53,14 @@ function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
         "top-0": isOpen,
         "pt-5": isOpen,
         "top-5": !isOpen,
+        "px-5": !isOpen,
       })}
     >
       <div
         className={clsx(
-          "container flex w-full items-start justify-between text-white rounded-full p-4 px-10 transition-all",
+          "container max-w-[1100px] 2xl:max-w-[1500px] p-4 flex w-full items-start justify-between text-white rounded-lg transition-all",
           {
-            "bg-transparent backdrop-blur-2xl": isScrolled && !isOpen,
+            "bg-transparent backdrop-blur-3xl": isScrolled && !isOpen,
             "bg-transparent": !isScrolled || isOpen,
           }
         )}
@@ -68,7 +69,7 @@ function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 1.5 }}
+            transition={{ duration: 1, delay: 1 }}
             key={item._id}
             className="flex w-full justify-between"
           >
@@ -84,14 +85,14 @@ function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative pb-1 hover:text-tertiary cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-500 before:absolute before:bg-tertiary before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-500 after:absolute after:bg-tertiary after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%]"
+                    className="relative pb-1"
                   >
                     <Image
                       src={urlFor(social.icon).url()}
                       width={30}
                       height={30}
                       alt={social.platform}
-                      className="hover:opacity-40"
+                      className="hover:opacity-20 transition-all"
                     />
                   </a>
                 ))}
@@ -141,9 +142,9 @@ function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ x: -50, opacity: 0 }}
+            initial={{ x: 200, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            exit={{ x: -50, opacity: 0 }}
+            exit={{ x: 200, opacity: 0 }}
             transition={{ duration: 0.6 }}
             className="z-40 p-4 px-10 absolute top-0 w-full h-screen bg-secondary text-white flex flex-col justify-start"
           >
@@ -175,7 +176,7 @@ function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="pb-1 relative hover:text-tertiary cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-500 before:absolute before:bg-tertiary before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-500 after:absolute after:bg-tertiary after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%]"
+                      className="pb-1 relative hover:opacity-20"
                     >
                       <Image
                         src={urlFor(social.icon).url()}

@@ -5,7 +5,7 @@ function BlackScreenReveal({ children }: { children: React.ReactNode }) {
   const [isRevealed, setIsRevealed] = useState(false);
 
   useEffect(() => {
-        if (typeof window === "undefined") return;
+    if (typeof window === "undefined") return;
 
     if (!isRevealed) {
       document.body.style.overflow = "hidden";
@@ -13,7 +13,7 @@ function BlackScreenReveal({ children }: { children: React.ReactNode }) {
     const timer = setTimeout(() => {
       setIsRevealed(true);
       document.body.style.overflow = "";
-    }, 1500);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, [isRevealed]);
@@ -24,8 +24,8 @@ function BlackScreenReveal({ children }: { children: React.ReactNode }) {
         <motion.div
           initial={{ y: 0 }}
           animate={{ y: "-100%" }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="fixed top-0 left-0 w-full h-full bg-slate-800 z-50"
+          transition={{ duration: 1, ease: "easeInOut" }}
+          className="fixed top-0 left-0 w-full h-full bg-gradient-to-b from-black via-black to-secondary z-50"
         />
       )}
 
