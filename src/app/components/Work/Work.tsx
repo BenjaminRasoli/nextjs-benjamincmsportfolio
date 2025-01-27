@@ -29,20 +29,17 @@ function VerticalTimeLineFunction({ work }: { work: WorkType }) {
         <Image
           src={urlFor(work.image).url()}
           alt="work image"
-          width={55}
-          height={40}
-          className="rounded-[1.8rem] w-fit"
+          width={100}
+          height={100}
+          className="rounded-full w-full h-full object-center transform scale-90"
         />
       }
     >
       {work.timeLineText.map((text: TimeLineType) => (
         <div className="max-w-80 break-words" key={text._key}>
-          <h1 className="vertical-timeline-element-title text-h1">
-            {text.title}
-          </h1>
-          <h4 className="vertical-timeline-element-subtitle text-h4 pt-1 ">
-            {text.location}
-          </h4>
+          <h1 className="text-h1">{text.title}</h1>
+          <h4 className="text-p pt-3 font-bold">{text.position}</h4>
+          <h4 className="text-p">{text.location}</h4>
           <p className="text-p">{text.description}</p>
         </div>
       ))}

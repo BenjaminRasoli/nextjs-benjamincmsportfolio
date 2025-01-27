@@ -102,6 +102,7 @@ export interface TimeLineType {
   title: string;
   description: string;
   location: string;
+  position: string;
 }
 
 export interface ContactTypes {
