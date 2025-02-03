@@ -10,6 +10,7 @@ import { ThreeDots } from "react-loader-spinner";
 import axios from "axios";
 import Image from "next/image";
 import { urlFor } from "@/sanity/sanity.query";
+import ComponentText from "../ComponentText/ComponentText";
 
 function Contact({ contact }: { contact: ContactTypes[] }) {
   const [formData, setFormData] = useState(
@@ -127,23 +128,10 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
       <div className="container max-w-[1000px] 2xl:max-w-[1500px] flex-col lg:flex-row flex justify-center lg:justify-between">
         {contact.map((contactText: ContactTypes) => (
           <div className="pb-10" key={contactText._id}>
-            <motion.p
-              initial={{ y: -50, opacity: 0 }}
-              animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
-              transition={{ duration: 1, delay: 0.1 }}
-              className="text-p text-white"
-            >
-              {contactText.contactText.smallText}
-            </motion.p>
-            <motion.h1
-              initial={{ y: 50, opacity: 0 }}
-              animate={inView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
-              transition={{ duration: 1, delay: 0.1 }}
-              ref={ref}
-              className="text-h1 text-tertiary pb-6"
-            >
-              {contactText.contactText.bigText}
-            </motion.h1>
+            <ComponentText
+              key={contactText._id}
+              textData={contactText.contactText}
+            />
             <div className="text-white flex justify-center sm:justify-start md:w-[600px]">
               <form onSubmit={(e) => handleForm(e)} noValidate>
                 {contactText.contactForm.map((contactForm: ContactForm) => (
@@ -237,7 +225,7 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
                   </button>
 
                   <a
-                    href={`mailto:${contactText.contactEmail}`}
+                    href={`mailto:${contactText.contactEmail.emailText}`}
                     className="ml-4 text-sm sm:text-base text-white hover:opacity-20 flex flex-row items-center gap-1"
                   >
                     {contactText.contactEmail.emailText}

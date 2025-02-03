@@ -10,6 +10,7 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import Image from "next/image";
 import { urlFor } from "@/sanity/sanity.query";
+import ComponentText from "../ComponentText/ComponentText";
 
 function VerticalTimeLineFunction({ work }: { work: WorkType }) {
   return (
@@ -37,8 +38,8 @@ function VerticalTimeLineFunction({ work }: { work: WorkType }) {
     >
       {work.timeLineText.map((text: TimeLineType) => (
         <div className="max-w-80 break-words" key={text._key}>
-          <h1 className="text-h1">{text.title}</h1>
-          <h4 className="text-p pt-3 font-bold">{text.position}</h4>
+          <h1 className="text-h4 lg:text-h2 font-bold">{text.title}</h1>
+          <h4 className="text-h5 lg:text-h4 pb-3">{text.position}</h4>
           <h4 className="text-p">{text.location}</h4>
           <p className="text-p">{text.description}</p>
         </div>
@@ -59,35 +60,7 @@ function Work({ workText, work }: { workText: WorksText[]; work: WorkType[] }) {
     >
       <div className="container max-w-[1000px] 2xl:max-w-[1500px]">
         {workText.map((workText) => (
-          <div className="max-w-3xl pb-10" key={workText._id}>
-            <motion.p
-              initial={{ y: -50, opacity: 0 }}
-              animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
-              transition={{ duration: 1, delay: 0.1 }}
-              ref={ref}
-              className="text-p text-white"
-            >
-              {workText.workText.smallText}
-            </motion.p>
-            <motion.h1
-              initial={{ y: 50, opacity: 0 }}
-              animate={inView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
-              transition={{ duration: 1, delay: 0.1 }}
-              ref={ref}
-              className="text-h1 text-tertiary pb-6"
-            >
-              {workText.workText.bigText}
-            </motion.h1>
-            <motion.p
-              initial={{ y: -50, opacity: 0 }}
-              animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
-              transition={{ duration: 1, delay: 0.1 }}
-              ref={ref}
-              className="text-p text-white"
-            >
-              {workText.workText.longText}
-            </motion.p>
-          </div>
+          <ComponentText key={workText._id} textData={workText.workText} />
         ))}
         <VerticalTimeline lineColor={"#4F46E5"}>
           {work.map((eachWork) => (

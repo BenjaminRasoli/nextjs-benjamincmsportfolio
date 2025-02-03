@@ -8,16 +8,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import Hamburger from "hamburger-react";
 
 function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isOpen, setOpen] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
 
     const handleWindowResize = () => {
       setOpen(false);
@@ -29,11 +24,9 @@ function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
       document.body.style.overflowY = "auto";
     }
 
-    window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleWindowResize);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleWindowResize);
     };
   }, [isOpen]);
@@ -60,8 +53,8 @@ function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
         className={clsx(
           "container max-w-[1000px] 2xl:max-w-[1500px] p-4 flex w-full items-start justify-between text-white rounded-lg transition-all",
           {
-            "bg-transparent backdrop-blur-3xl": isScrolled && !isOpen,
-            "bg-transparent": !isScrolled || isOpen,
+            "bg-transparent backdrop-blur-3xl": !isOpen,
+            "bg-transparent": isOpen,
           }
         )}
       >

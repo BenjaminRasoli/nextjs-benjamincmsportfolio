@@ -33,6 +33,7 @@ export interface ButtonText {
 }
 
 export interface overViewText {
+  _id: string;
   smallText: string;
   bigText: string;
   longText: string;
@@ -70,24 +71,12 @@ export interface ProjectsLinks {
 
 export interface ProjectsText {
   _id: string;
-  projectText: ProjectText;
-}
-
-export interface ProjectText {
-  longText: string;
-  smallText: string;
-  bigText: string;
+  projectText: overViewText;
 }
 
 export interface WorksText {
   _id: string;
-  workText: WorkText;
-}
-
-export interface WorkText {
-  longText: string;
-  smallText: string;
-  bigText: string;
+  workText: overViewText;
 }
 
 export interface WorkType {

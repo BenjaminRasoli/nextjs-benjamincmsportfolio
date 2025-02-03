@@ -4,6 +4,7 @@ import { ProjectsText, ProjectsType } from "@/types";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import ComponentText from "../ComponentText/ComponentText";
 
 function Projects({
   projectData,
@@ -24,33 +25,7 @@ function Projects({
     >
       <div className="container max-w-[1000px] 2xl:max-w-[1500px]">
         {projectTextData.map((text) => (
-          <div className="max-w-3xl pb-10" key={text._id}>
-            <motion.p
-              initial={{ y: -50, opacity: 0 }}
-              animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
-              transition={{ duration: 1, delay: 0.1 }}
-              className="text-p text-white"
-            >
-              {text.projectText.smallText}
-            </motion.p>
-            <motion.h1
-              initial={{ y: 50, opacity: 0 }}
-              animate={inView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
-              transition={{ duration: 1, delay: 0.1 }}
-              ref={ref}
-              className="text-h1 text-tertiary pb-6"
-            >
-              {text.projectText.bigText}
-            </motion.h1>
-            <motion.p
-              initial={{ y: -50, opacity: 0 }}
-              animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
-              transition={{ duration: 1, delay: 0.1 }}
-              className="text-p text-white"
-            >
-              {text.projectText.longText}
-            </motion.p>
-          </div>
+          <ComponentText key={text._id} textData={text.projectText} />
         ))}
         <div className="relative flex flex-row flex-wrap justify-center lg:justify-between items-center gap-10">
           {projectData.map((project: ProjectsType) => (
@@ -73,23 +48,23 @@ function Projects({
                 <h1 className="text-h1 text-white z-10 truncate max-w-[400px] h-[50px]">
                   {project.projectName}
                 </h1>
-                <div className="flex flex-row gap-5 pt-3 justify-center">
+                <div className="flex flex-col lg:flex-row gap-5 pt-3 justify-center">
                   {project.projectLinks.map((link) => (
                     <a
                       key={link._key}
                       href={link.projectLink.current}
                       target="_blank"
-                      className="relative inline-block px-4 py-2 text-white border-2 border-white rounded overflow-hidden transition-all duration-300 group/button"
+                      className="relative flex justify-center items-center px-4 py-2 text-white border-2 border-white rounded overflow-hidden transition-all duration-300 group/button"
                     >
-                      <span className="absolute inset-0 w-0 bg-white lg:group-hover/button:w-full transition-all duration-300 ease-in-out"></span>
+                      <span className="absolute inset-0 w-0 bg-white group-hover/button:w-full transition-all duration-300 ease-in-out"></span>
 
-                      <div className="relative z-10 flex flex-row items-center lg:group-hover/button:text-black transition-all duration-300">
+                      <div className="relative z-10 flex flex-row items-center group-hover/button:text-black transition-all duration-300">
                         <Image
                           src={urlFor(link.linkImage).url()}
                           width={20}
                           height={20}
                           alt={project.projectName}
-                          className="transition-all duration-300 lg:group-hover/button:brightness-0 lg:group-hover/button:saturate-100"
+                          className="transition-all duration-300 group-hover/button:brightness-0 group-hover/button:saturate-100"
                         />
                         <p className="ml-2">{link.label}</p>
                       </div>
