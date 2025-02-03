@@ -1,8 +1,5 @@
 "use client";
 import { TimeLineType, WorksText, WorkType } from "@/types";
-import React from "react";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -49,10 +46,6 @@ function VerticalTimeLineFunction({ work }: { work: WorkType }) {
 }
 
 function Work({ workText, work }: { workText: WorksText[]; work: WorkType[] }) {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.4,
-  });
   return (
     <div
       id="work"

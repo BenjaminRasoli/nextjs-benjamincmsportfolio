@@ -3,7 +3,6 @@ import { urlFor } from "@/sanity/sanity.query";
 import { ProjectsText, ProjectsType } from "@/types";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import ComponentText from "../ComponentText/ComponentText";
 
 function Projects({
@@ -13,11 +12,6 @@ function Projects({
   projectData: ProjectsType[];
   projectTextData: ProjectsText[];
 }) {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.4,
-  });
-
   return (
     <div
       id="project"

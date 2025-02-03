@@ -1,8 +1,6 @@
 "use client";
 import { ContactForm, ContactTypes } from "@/types";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import PathDrawing from "../PathDrawing/PathDrawing";
 import { IoIosCheckmarkCircle, IoIosCloseCircle } from "react-icons/io";
 import { MdOutlineErrorOutline } from "react-icons/md";
@@ -26,11 +24,6 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
   const [formsuccess, setFormSuccess] = useState<boolean>(false);
   const [formError, setFormError] = useState<null | boolean>(null);
   const [loading, setLoading] = useState<boolean>(false);
-
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.6,
-  });
 
   const handleInput = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
