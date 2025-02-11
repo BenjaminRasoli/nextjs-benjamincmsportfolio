@@ -31,7 +31,7 @@ function Hero({ hero }: { hero: HeroTypes[] }) {
                 width={200}
                 height={400}
                 alt={item.heroImage}
-                className="xl:h-full rounded-full "
+                className="xl:h-full rounded-full mt-10"
               />
             </motion.div>
 

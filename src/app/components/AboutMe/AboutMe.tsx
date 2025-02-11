@@ -27,7 +27,7 @@ function AboutMe({ about }: { about: AboutMeTypes[] }) {
           animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
           transition={{ duration: 1, delay: 0.1 }}
           ref={ref}
-          className="flex items-center justify-center h-[280px]"
+          className="flex items-center justify-center h-[280px] pt-20"
         >
           <Laptop3dModel />
         </motion.div>

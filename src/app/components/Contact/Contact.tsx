@@ -129,7 +129,7 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
               <form onSubmit={(e) => handleForm(e)} noValidate>
                 {contactText.contactForm.map((contactForm: ContactForm) => (
                   <div
-                    className="flex flex-col pb-3 pt-3  "
+                    className="flex flex-col pb-3 pt-3"
                     key={contactForm._key}
                   >
                     <label className="pb-2">{contactForm.label}</label>
@@ -155,7 +155,7 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
 
                     {errors[contactForm._key] && (
                       <p className="text-red-500 text-p flex items-center gap-1 pt-2">
-                        <span className="pt-1">
+                        <span>
                           <MdOutlineErrorOutline />
                         </span>
                         {errors[contactForm._key]}
@@ -177,7 +177,7 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
                     {formsuccess && (
                       <p className="text-green-500 text-p flex items-center gap-1 pt-2">
                         Your message has been sent!
-                        <span className="pt-1">
+                        <span>
                           <IoIosCheckmarkCircle />
                         </span>
                       </p>
@@ -185,7 +185,7 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
                     {formError && (
                       <p className="text-red-500 text-p flex items-center gap-1 pt-2">
                         There was an error submitting, please try again later
-                        <span className="pt-1">
+                        <span>
                           <IoIosCloseCircle />
                         </span>
                       </p>
@@ -201,7 +201,7 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
                     <span className="absolute inset-0 bg-white translate-x-[-100%] transition-transform duration-300 ease-in-out group-hover:translate-x-0"></span>
                     <span className="relative z-10 group-hover:text-black flex flex-row items-center gap-1">
                       {contactText.contactSendMessageButton.buttonText}
-                      <span className="pt-1 group-hover:filter group-hover:brightness-[0] group-hover:saturate-[100%]">
+                      <span className=" group-hover:filter group-hover:brightness-[0] group-hover:saturate-[100%]">
                         <Image
                           src={
                             urlFor(
@@ -222,7 +222,7 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
                     className="ml-4 text-sm sm:text-base text-white hover:opacity-20 flex flex-row items-center gap-1"
                   >
                     {contactText.contactEmail.emailText}
-                    <span className="pt-1">
+                    <span>
                       <Image
                         src={
                           urlFor(
