@@ -22,8 +22,15 @@ export interface NavLinks {
 export interface HeroTypes {
   _id: string;
   mainText: string;
+  firstName: string;
+  lastName: string;
+  textPhrases: TextPhrases[];
   heroImage: string;
   buttonText: ButtonText[];
+}
+
+export interface TextPhrases {
+  textPhrase: string;
 }
 
 export interface ButtonText {
