@@ -16,6 +16,10 @@
   }
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   overflow-x: hidden;
   font-family: var(--font-inter);
@@ -24,7 +28,8 @@ body {
 @layer components {
   input:-webkit-autofill,
   textarea:-webkit-autofill {
-    transition: background-color 90000000s ease-in-out 0s,
+    transition:
+      background-color 90000000s ease-in-out 0s,
       color 900000000s ease-in-out 0s;
   }
 }
