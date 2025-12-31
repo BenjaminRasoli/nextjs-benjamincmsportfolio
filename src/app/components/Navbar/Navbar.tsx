@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import clsx from "clsx";
 import { useState, useEffect } from "react";
 import { NavbarTypes, SocialMedia, NavLinks } from "@/types";
 import { urlFor } from "@/sanity/sanity.query";
