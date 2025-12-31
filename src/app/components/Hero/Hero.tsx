@@ -18,7 +18,7 @@ function Hero({ hero }: { hero: HeroTypes[] }) {
         {!isFirefox && <StarsBackground />}
       </div>
 
-      <div className="container max-w-[1000px] 2xl:max-w-[1500px]">
+      <div className="container">
         {hero.map((item) => (
           <div
             key={item._id}

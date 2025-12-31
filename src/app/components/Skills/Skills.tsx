@@ -19,9 +19,9 @@ function Skills({
   return (
     <div
       id="skills"
-      className="bg-gradient-to-b from-secondary via-black pt-16 pb-16 scroll-m-20 px-5"
+      className="bg-gradient-to-b from-secondary via-black outerContainer"
     >
-      <div className="container max-w-[1000px] 2xl:max-w-[1500px]">
+      <div className="container">
         {skillsTextData?.map((text) => (
           <ComponentText key={text._id} textData={text.skillText} />
         ))}

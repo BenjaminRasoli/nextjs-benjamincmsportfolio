@@ -15,7 +15,7 @@ function Projects({
   return (
     <div
       id="project"
-      className="bg-gradient-to-b from-black to-secondary pt-16 pb-16 scroll-m-20"
+      className="bg-gradient-to-b from-black to-secondary outerContainer"
     >
       <div className="container">
         {projectTextData.map((text) => (

@@ -24,6 +24,10 @@ html {
   @apply max-w-[1200px] px-5 sm:px-10 mx-auto;
 }
 
+.outerContainer {
+  @apply py-16 scroll-m-20;
+}
+
 body {
   overflow-x: hidden;
   font-family: var(--font-inter);

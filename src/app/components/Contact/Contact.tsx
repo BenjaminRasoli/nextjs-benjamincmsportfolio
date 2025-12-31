@@ -116,9 +116,9 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
   return (
     <div
       id="contact"
-      className="bg-gradient-to-b from-black via-secondary pt-16 scroll-m-20 px-5"
+      className="bg-gradient-to-b from-black via-secondary outerContainer"
     >
-      <div className="container max-w-[1000px] 2xl:max-w-[1500px] flex-col lg:flex-row flex justify-center lg:justify-between">
+      <div className="container flex-col lg:flex-row flex justify-center lg:justify-between">
         {contact.map((contactText: ContactTypes) => (
           <div className="pb-10" key={contactText._id}>
             <ComponentText

@@ -41,12 +41,8 @@ function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
   };
 
   return (
-    <div className={clsx("z-20", "sticky", "w-full top-0 p-5")}>
-      <div
-        className={clsx(
-          "container max-w-[1000px] 2xl:max-w-[1500px] backdrop-blur-3xl p-4 flex w-full items-start justify-between text-white rounded-lg transition-all"
-        )}
-      >
+    <div className={"container z-20 sticky top-0 p-5"}>
+      <div className="backdrop-blur-3xl flex py-2 px-4 items-start justify-between text-white rounded-lg transition-all">
         {navbar.map((item: NavbarTypes) => (
           <motion.div
             initial={{ y: 50, opacity: 0 }}
