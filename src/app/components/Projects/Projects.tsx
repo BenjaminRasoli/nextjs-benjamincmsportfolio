@@ -15,19 +15,19 @@ function Projects({
   return (
     <div
       id="project"
-      className="bg-gradient-to-b from-black to-secondary pt-16 pb-16 scroll-m-20 px-5"
+      className="bg-gradient-to-b from-black to-secondary pt-16 pb-16 scroll-m-20"
     >
-      <div className="container max-w-[1000px] 2xl:max-w-[1500px]">
+      <div className="container">
         {projectTextData.map((text) => (
           <ComponentText key={text._id} textData={text.projectText} />
         ))}
-        <div className="relative flex flex-row flex-wrap justify-center lg:justify-between items-center gap-10">
+        <div className="relative grid grid-cols-1 sm:grid-cols-2 custom-lg:grid-cols-3 justify-center items-center gap-10">
           {projectData.map((project: ProjectsType) => (
             <motion.div
               initial={{ y: 50 }}
               whileInView={{ y: 0 }}
               viewport={{ once: true }}
-              className="group relative w-[400px] h-[350px] flex justify-center items-center flex-col overflow-hidden"
+              className="group relative w-full h-[350px] flex justify-center items-center flex-col overflow-hidden"
               key={project._id}
             >
               <Image
@@ -39,16 +39,17 @@ function Projects({
               />
 
               <div className="absolute inset-0 z-10 transform lg:translate-y-[100%] translate-y-0 lg:group-hover:translate-y-0 transition-transform duration-500 ease-in-out text-center flex flex-col justify-center items-center">
-                <h1 className="text-h1 text-white z-10 truncate max-w-[400px] h-[50px]">
+                <h1 className="text-h1 text-white z-10 w-full h-[90px] break-words line-clamp-2 px-5">
                   {project.projectName}
                 </h1>
-                <div className="flex flex-col lg:flex-row gap-5 pt-3 justify-center">
+
+                <div className="flex flex-col gap-5 pt-3 justify-start min-h-[130px]">
                   {project.projectLinks.map((link) => (
                     <a
                       key={link._key}
                       href={link.projectLink.current}
                       target="_blank"
-                      className="relative flex justify-center items-center px-4 py-2 text-white border-2 border-white rounded overflow-hidden transition-all duration-300 group/button"
+                      className="min-h-[50px] relative flex justify-center items-center px-4 py-2 text-white border-2 border-white rounded overflow-hidden transition-all duration-300 group/button"
                     >
                       <span className="absolute inset-0 w-0 bg-white group-hover/button:w-full transition-all duration-300 ease-in-out"></span>
 

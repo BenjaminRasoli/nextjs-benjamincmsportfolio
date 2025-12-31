@@ -17,9 +17,6 @@ export default {
         tertiary: "#4F46E5",
         white: "#FFFFFF",
       },
-      container: {
-        center: true,
-      },
       fontSize: {
         h1: ["2.25rem", { lineHeight: "2.5rem", fontWeight: "bold" }],
         h2: ["1.875rem", { lineHeight: "2.25rem" }],
@@ -28,6 +25,14 @@ export default {
         h5: ["1.1rem", { lineHeight: "1.55rem" }],
         p: ["1rem", { lineHeight: "1.35rem" }],
       },
+    },
+    screens: {
+      xs: "480px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "custom-lg": "1100px",
     },
   },
   plugins: [],

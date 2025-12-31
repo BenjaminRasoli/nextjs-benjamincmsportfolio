@@ -20,6 +20,10 @@ html {
   scrollbar-gutter: stable;
 }
 
+.container {
+  @apply max-w-[1200px] px-5 sm:px-10 mx-auto;
+}
+
 body {
   overflow-x: hidden;
   font-family: var(--font-inter);
