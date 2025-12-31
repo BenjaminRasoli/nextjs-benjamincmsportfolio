@@ -51,6 +51,16 @@ export interface AboutMeTypes {
   aboutText: overViewText;
 }
 
+export interface SkillsTextTypes {
+  _id: string;
+  skillText: overViewText;
+}
+
+export interface SkillsTypes {
+  _id: string;
+  skillsImage: string;
+}
+
 export interface ModelProps {
   scale: number;
   position?: [number, number, number];

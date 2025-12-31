@@ -49,7 +49,7 @@ function Work({ workText, work }: { workText: WorksText[]; work: WorkType[] }) {
   return (
     <div
       id="work"
-      className="bg-gradient-to-b from-black to-secondary pt-16 pb-16 scroll-m-20 px-5"
+      className="bg-gradient-to-b from-secondary via-black pt-16 pb-16 scroll-m-20 px-5"
     >
       <div className="container max-w-[1000px] 2xl:max-w-[1500px]">
         {workText.map((workText) => (
