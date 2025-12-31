@@ -10,6 +10,8 @@ export const urlFor = (source: string) => {
 const NAVBAR_QUERY = `*[_type == "navbar"]`;
 const HERO_QUERY = `*[_type == "hero"]`;
 const ABOUT_ME_QUERY = `*[_type == "aboutMe"]`;
+const SKILLS_TEXT_QUERY =`*[_type == "skillsText"]`;
+const SKILLS_QUERY = `*[_type == "skills"]`;
 const PROJECTS_QUERY = `*[_type == "projects"] | order(position asc)`;
 const PROJECTS_TEXT_QUERY = `*[_type == "projectsText"]`;
 const WORK_TEXT_QUERY = `*[_type == "workText"]`;
@@ -29,6 +31,14 @@ export async function getHero() {
 
 export async function getAboutMe() {
   return client.fetch(ABOUT_ME_QUERY, {}, options);
+}
+
+export async function getSkillsText() {
+  return client.fetch(SKILLS_TEXT_QUERY, {}, options);
+}
+
+export async function getSkills() {
+  return client.fetch(SKILLS_QUERY, {}, options);
 }
 
 export async function getProjects() {

@@ -2,6 +2,7 @@ import AboutServer from "./components/AboutMe/AboutMeServer";
 import ContactServer from "./components/Contact/ContactServer";
 import HeroServer from "./components/Hero/HeroServer";
 import ProjectServer from "./components/Projects/ProjectsServer";
+import SkillsServer from "./components/Skills/SkillsServer";
 import WorkTextServer from "./components/Work/WorkServer";
 
 function Page() {
@@ -9,6 +10,7 @@ function Page() {
     <main>
       <HeroServer />
       <AboutServer />
+      <SkillsServer />
       <ProjectServer />
       <WorkTextServer />
       <ContactServer />
