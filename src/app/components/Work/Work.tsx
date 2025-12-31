@@ -13,29 +13,36 @@ function VerticalTimeLineFunction({ work }: { work: WorkType }) {
   return (
     <VerticalTimelineElement
       key={work._id}
-      className="vertical-timeline-element--work"
       contentStyle={{
         background: "rgb(0, 0, 0)",
         color: "#ffffff",
+        border: "2px solid #ffffff",
+        borderRadius: "12px",
+        padding: "20px",
+        boxShadow: "none",
       }}
-      contentArrowStyle={{ borderRight: "7px solid  #ffffff" }}
+      contentArrowStyle={{ borderRight: "10px solid  #ffffff" }}
       date={work.date}
       iconStyle={{
-        background: "#4F46E5",
+        background: "#ffffff",
       }}
       icon={
-        <Image
-          src={urlFor(work.image).url()}
-          alt="work image"
-          width={100}
-          height={100}
-          className="rounded-full w-full h-full object-center transform scale-90"
-        />
+        <div className="flex items-center justify-center w-full h-full">
+          <Image
+            src={urlFor(work.image).url()}
+            alt="work image"
+            width={80}
+            height={80}
+            className="h-auto w-[45px] object-contain"
+          />
+        </div>
       }
     >
       {work.timeLineText.map((text: TimeLineType) => (
-        <div className="max-w-80 break-words" key={text._key}>
-          <h1 className="text-h4 lg:text-h2 font-bold">{text.title}</h1>
+        <div className="break-words" key={text._key}>
+          <h1 className="text-h4 lg:text-h2 font-bold text-tertiary">
+            {text.title}
+          </h1>
           <h4 className="text-h5 lg:text-h4 pb-3">{text.position}</h4>
           <h4 className="text-p">{text.location}</h4>
           <p className="text-p">{text.description}</p>
@@ -55,7 +62,7 @@ function Work({ workText, work }: { workText: WorksText[]; work: WorkType[] }) {
         {workText.map((workText) => (
           <ComponentText key={workText._id} textData={workText.workText} />
         ))}
-        <VerticalTimeline lineColor={"#4F46E5"}>
+        <VerticalTimeline className="!w-full" lineColor={"#4F46E5"}>
           {work.map((eachWork) => (
             <VerticalTimeLineFunction key={eachWork._id} work={eachWork} />
           ))}
