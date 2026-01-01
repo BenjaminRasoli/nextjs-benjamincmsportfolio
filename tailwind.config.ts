@@ -33,6 +33,7 @@ export default {
       lg: "1024px",
       xl: "1280px",
       "custom-lg": "1100px",
+      "custom-lg-2": "1170px",
     },
   },
   plugins: [],

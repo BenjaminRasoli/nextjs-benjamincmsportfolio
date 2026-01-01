@@ -33,7 +33,7 @@ function VerticalTimeLineFunction({ work }: { work: WorkType }) {
             alt="work image"
             width={80}
             height={80}
-            className="h-auto w-[45px] object-contain"
+            className="h-auto w-[30px] custom-lg-2:w-[40px] object-contain"
           />
         </div>
       }
