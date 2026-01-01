@@ -1,3 +1,5 @@
+import { PortableTextBlock } from "next-sanity";
+
 export interface NavbarTypes {
   _id: string;
   mainTitle: string;
@@ -165,4 +167,30 @@ export interface NotFoundTypes {
   notFound: string;
   sorryThePage: string;
   goBack: string;
+}
+
+export interface BlogsText {
+  _id: string;
+  blogText: overViewText;
+}
+
+export interface BlogType {
+  _id: string;
+  blogName: string;
+  blogImage: string;
+  publishedAt: string;
+  tag: string;
+  description: PortableTextBlock[];
+  slug: {
+    current: string;
+  };
+}
+
+export interface BlogsType {
+  _id: string;
+  blogName: string;
+  blogImage: string;
+  publishedAt: Date;
+  tag: string;
+  description: PortableTextBlock[];
 }

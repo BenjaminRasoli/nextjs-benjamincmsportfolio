@@ -19,6 +19,8 @@ const WORK_QUERY = `*[_type == "work"] | order(position asc)`;
 const CONTAT_QUERY = `*[_type == "contact"]`;
 const FOOTER_QUERY = `*[_type == "footer"]`;
 const NOT_FOUND_QUERY = `*[_type == "notFound"]`;
+const BLOGS_QUERY = `*[_type == "blogs"]`;
+const BLOGS_TEXT_QUERY = `*[_type == "blogsText"]`;
 
 const options = { next: { revalidate: 30 } };
 
@@ -68,4 +70,12 @@ export async function getFooter() {
 
 export async function getNotFound() {
   return client.fetch(NOT_FOUND_QUERY, {}, options);
+}
+
+export async function getBlogs() {
+  return client.fetch(BLOGS_QUERY, {}, options);
+}
+
+export async function getBlogsText() {
+  return client.fetch(BLOGS_TEXT_QUERY, {}, options);
 }
