@@ -32,6 +32,8 @@ export default {
       md: "768px",
       lg: "1024px",
       xl: "1280px",
+      "custom-sm": "560px",
+      "custom-lg-1": "900px",
       "custom-lg": "1100px",
       "custom-lg-2": "1170px",
     },
