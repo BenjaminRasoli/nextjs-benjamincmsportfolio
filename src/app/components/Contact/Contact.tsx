@@ -229,7 +229,7 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
                   {contactText.contactEmail.emailText && (
                     <a
                       href={`mailto:${contactText.contactEmail.emailText}`}
-                      className="ml-4 text-sm sm:text-base text-white hover:opacity-50 flex flex-row items-center gap-1"
+                      className="ml-4 text-sm sm:text-base text-white hover:underline flex flex-row items-center gap-1"
                     >
                       {contactText.contactEmail.emailText}
                       <span>

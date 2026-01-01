@@ -101,8 +101,9 @@ function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
             </div>
             <div className="lg:hidden z-50 flex items-center">
               <RxHamburgerMenu
+                className="cursor-pointer hover:text-tertiary"
                 size={35}
-                aria-label="menu"
+                aria-label="open menu"
                 onClick={() => setOpen(true)}
               />
             </div>
@@ -132,8 +133,9 @@ function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
                 <div className="pt-7" key={item._id}>
                   <div className="absolute right-8 top-[50px]">
                     <IoMdClose
+                      className="cursor-pointer hover:text-tertiary"
                       size={35}
-                      aria-label="menu"
+                      aria-label="close menu"
                       onClick={() => setOpen(false)}
                     />
                   </div>
