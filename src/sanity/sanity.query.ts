@@ -10,7 +10,7 @@ export const urlFor = (source: string) => {
 const NAVBAR_QUERY = `*[_type == "navbar"]`;
 const HERO_QUERY = `*[_type == "hero"]`;
 const ABOUT_ME_QUERY = `*[_type == "aboutMe"]`;
-const SKILLS_TEXT_QUERY =`*[_type == "skillsText"]`;
+const SKILLS_TEXT_QUERY = `*[_type == "skillsText"]`;
 const SKILLS_QUERY = `*[_type == "skills"]`;
 const PROJECTS_QUERY = `*[_type == "projects"] | order(position asc)`;
 const PROJECTS_TEXT_QUERY = `*[_type == "projectsText"]`;
@@ -18,6 +18,7 @@ const WORK_TEXT_QUERY = `*[_type == "workText"]`;
 const WORK_QUERY = `*[_type == "work"] | order(position asc)`;
 const CONTAT_QUERY = `*[_type == "contact"]`;
 const FOOTER_QUERY = `*[_type == "footer"]`;
+const NOT_FOUND_QUERY = `*[_type == "notFound"]`;
 
 const options = { next: { revalidate: 30 } };
 
@@ -63,4 +64,8 @@ export async function getContact() {
 
 export async function getFooter() {
   return client.fetch(FOOTER_QUERY, {}, options);
+}
+
+export async function getNotFound() {
+  return client.fetch(NOT_FOUND_QUERY, {}, options);
 }
