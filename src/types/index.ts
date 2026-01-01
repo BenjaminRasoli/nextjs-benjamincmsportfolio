@@ -160,3 +160,9 @@ export interface FooterLinksTitle {
   footerLinksText: string;
   footerLinks: { current: string };
 }
+
+export interface NotFoundTypes {
+  notFound: string;
+  sorryThePage: string;
+  goBack: string;
+}
