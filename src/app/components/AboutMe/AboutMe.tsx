@@ -1,10 +1,11 @@
 "use client";
 
 import { AboutMeTypes } from "@/types";
-import Laptop3dModel from "../Canvas/Laptop";
 import ComponentText from "../ComponentText/ComponentText";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Player from "lottie-react";
+import city from "./city.json";
 
 function AboutMe({ about }: { about: AboutMeTypes[] }) {
   const { ref, inView } = useInView({
@@ -27,9 +28,18 @@ function AboutMe({ about }: { about: AboutMeTypes[] }) {
           animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
           transition={{ duration: 1, delay: 0.1 }}
           ref={ref}
-          className="flex items-center justify-center h-[280px] pt-20"
+          className="flex items-start justify-center h-[250px] lg:h-[400px]"
         >
-          <Laptop3dModel />
+          <Player
+            animationData={city}
+            loop
+            autoplay
+            className="
+    w-full h-full
+    translate-y-[-60px] lg:translate-y-0
+    lg:translate-x-28
+  "
+          />
         </motion.div>
       </div>
     </div>

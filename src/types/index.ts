@@ -128,7 +128,8 @@ export interface ContactForm {
 
 export interface FooterTypes {
   _id: string;
-  copyRightText: string;
+  developedWith: string;
+  byText: string;
   footerContactTitle: FooterContactTitle[];
   socialMedia: SocialMedia[];
   mainTitle: MainTitle[];
