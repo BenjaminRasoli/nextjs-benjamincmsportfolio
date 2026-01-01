@@ -38,10 +38,10 @@ export default function Footer({ footerData }: { footerData: any }) {
             {footer.footerContactTitle.map((contactTitle: any) => (
               <div key={contactTitle._key} className="text-sm mb-2">
                 <p>
-                  {contactTitle.footerContact}{" "}
+                  {contactTitle.footerContact && contactTitle.footerContact}
                   <a
                     href={`mailto:${contactTitle.footerContactValue}`}
-                    className="text-blue-400 hover:underline"
+                    className="text-white underline hover:text-tertiary"
                   >
                     {contactTitle.footerContactValue}
                   </a>

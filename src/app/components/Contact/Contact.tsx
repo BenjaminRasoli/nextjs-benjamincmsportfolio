@@ -125,7 +125,7 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
               key={contactText._id}
               textData={contactText.contactText}
             />
-            <div className="text-white flex justify-center sm:justify-start md:w-[600px]">
+            <div className="text-white justify-center sm:justify-start md:w-[600px]">
               <form onSubmit={(e) => handleForm(e)} noValidate>
                 {contactText.contactForm.map((contactForm: ContactForm) => (
                   <div
@@ -144,7 +144,7 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
                       />
                     ) : (
                       <input
-                        className="p-3 border w-[300px] sm:w-full border-gray-300 rounded-md bg-transparent text-white focus:border-tertiary focus:outline-none focus:ring-2 focus:ring-tertiary"
+                        className="p-3 border sm:w-full border-gray-300 rounded-md bg-transparent text-white focus:border-tertiary focus:outline-none focus:ring-2 focus:ring-tertiary"
                         type={contactForm.type}
                         placeholder={contactForm.placeHolder}
                         onChange={handleInput}
@@ -153,18 +153,24 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
                       />
                     )}
 
-                    {errors[contactForm._key] && (
-                      <p className="text-red-500 text-p flex items-center gap-1 pt-2">
-                        <span>
-                          <MdOutlineErrorOutline />
-                        </span>
-                        {errors[contactForm._key]}
-                      </p>
-                    )}
+                    <p
+                      className={`text-red-500 text-p flex items-center gap-1 pt-2 min-h-[1.25rem] ${
+                        errors[contactForm._key] ? "opacity-100" : "opacity-0"
+                      }`}
+                    >
+                      <span>
+                        <MdOutlineErrorOutline />
+                      </span>
+                      {errors[contactForm._key] || "placeholder"}
+                    </p>
                   </div>
                 ))}
-                {loading ? (
-                  <div className="text-tertiary text-p flex items-center gap-1 pt-2">
+                <div className="min-h-[48px] flex items-center">
+                  <div
+                    className={`flex items-center gap-1 transition-opacity duration-200 ${
+                      loading ? "opacity-100" : "opacity-0 absolute"
+                    }`}
+                  >
                     <ThreeDots
                       height="40"
                       width="40"
@@ -172,34 +178,37 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
                       radius="10"
                     />
                   </div>
-                ) : (
-                  <>
-                    {formsuccess && (
-                      <p className="text-green-500 text-p flex items-center gap-1 pt-2">
-                        Your message has been sent!
-                        <span>
-                          <IoIosCheckmarkCircle />
-                        </span>
-                      </p>
-                    )}
-                    {formError && (
-                      <p className="text-red-500 text-p flex items-center gap-1 pt-2">
-                        There was an error submitting, please try again later
-                        <span>
-                          <IoIosCloseCircle />
-                        </span>
-                      </p>
-                    )}
-                  </>
-                )}
 
-                <div className="flex flex-col gap-5 sm:flex-row justify-start items-center sm:justify-between pt-4">
+                  <p
+                    className={`text-green-500 text-p flex items-center gap-1 transition-opacity duration-200 ${
+                      formsuccess && !loading
+                        ? "opacity-100"
+                        : "opacity-0 absolute"
+                    }`}
+                  >
+                    Your message has been sent!
+                    <IoIosCheckmarkCircle />
+                  </p>
+
+                  <p
+                    className={`text-red-500 text-p flex items-center gap-1 transition-opacity duration-200 ${
+                      formError && !loading
+                        ? "opacity-100"
+                        : "opacity-0 absolute"
+                    }`}
+                  >
+                    There was an error submitting, please try again later
+                    <IoIosCloseCircle />
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-5 sm:flex-row justify-start items-center sm:justify-between">
                   <button
                     type="submit"
-                    className="relative overflow-hidden border-2 border-white text-white bg-transparent px-5 py-3 font-medium group"
+                    className="flex items-center justify-center relative overflow-hidden w-[220px] border-2 rounded-md border-white text-white bg-transparent px-5 py-3 font-medium group"
                   >
                     <span className="absolute inset-0 bg-white translate-x-[-100%] transition-transform duration-300 ease-in-out group-hover:translate-x-0"></span>
-                    <span className="relative z-10 group-hover:text-black flex flex-row items-center gap-1">
+                    <span className="relative z-10 group-hover:text-black flex flex-row items-center gap-2">
                       {contactText.contactSendMessageButton.buttonText}
                       <span className=" group-hover:filter group-hover:brightness-[0] group-hover:saturate-[100%]">
                         <Image
@@ -217,24 +226,26 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
                     </span>
                   </button>
 
-                  <a
-                    href={`mailto:${contactText.contactEmail.emailText}`}
-                    className="ml-4 text-sm sm:text-base text-white hover:opacity-20 flex flex-row items-center gap-1"
-                  >
-                    {contactText.contactEmail.emailText}
-                    <span>
-                      <Image
-                        src={
-                          urlFor(
-                            contactText.contactEmail.emailIcon
-                          ).url() as string
-                        }
-                        alt="social icon"
-                        width={15}
-                        height={30}
-                      />
-                    </span>
-                  </a>
+                  {contactText.contactEmail.emailText && (
+                    <a
+                      href={`mailto:${contactText.contactEmail.emailText}`}
+                      className="ml-4 text-sm sm:text-base text-white hover:opacity-50 flex flex-row items-center gap-1"
+                    >
+                      {contactText.contactEmail.emailText}
+                      <span>
+                        <Image
+                          src={
+                            urlFor(
+                              contactText.contactEmail.emailIcon
+                            ).url() as string
+                          }
+                          alt="social icon"
+                          width={15}
+                          height={30}
+                        />
+                      </span>
+                    </a>
+                  )}
                 </div>
               </form>
             </div>
