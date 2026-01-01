@@ -79,15 +79,13 @@ function Blog({
                   )}
 
                   <div className="p-4 flex flex-col">
-                    <div className="flex justify-between items-center gap-8">
-                      <h1 className="text-2xl font-semibold text-tertiary truncate flex-1 transition-opacity duration-300 group-hover:opacity-50">
+                    <span className="self-start text-sm text-tertiary bg-tertiary/20 px-2 py-1 rounded">
+                      {blog.tag}
+                    </span>
+
+                      <h1 className="text-2xl py-2 line-clamp-2 h-[78px] font-semibold text-tertiary transition-opacity duration-300 group-hover:opacity-50">
                         {blog.blogName}
                       </h1>
-
-                      <span className="text-sm text-tertiary bg-tertiary/20 px-2 py-1 rounded flex-shrink-0">
-                        {blog.tag}
-                      </span>
-                    </div>
 
                     <p className="text-xs text-white py-2">
                       {new Date(blog.publishedAt).toLocaleDateString("en-US", {

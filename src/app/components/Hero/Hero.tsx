@@ -13,7 +13,9 @@ function Hero({ hero }: { hero: HeroTypes[] }) {
     navigator.userAgent.toLowerCase().includes("firefox");
 
   return (
-    <div className="relative w-full pt-2 lg:py-24 flex flex-col justify-center items-center text-white overflow-hidden">
+    <div
+      className="relative w-full pt-2 lg:py-24 flex flex-col justify-center items-center text-white overflow-hidden"
+    >
       <div className="absolute inset-0 -z-10">
         {!isFirefox && <StarsBackground />}
       </div>
@@ -28,7 +30,7 @@ function Hero({ hero }: { hero: HeroTypes[] }) {
               <motion.h6
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1, delay: 1 }}
+                transition={{ duration: 1 }}
                 className="text-xl xl:text-2xl font-medium mb-2 leading-snug text-gray-300"
               >
                 {item.mainText}
@@ -37,7 +39,7 @@ function Hero({ hero }: { hero: HeroTypes[] }) {
               <motion.h1
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1, delay: 1.2 }}
+                transition={{ duration: 1 }}
                 className="text-5xl sm:text-6xl font-extrabold mb-6 leading-tight"
               >
                 <span className="text-tertiary">{item.firstName}</span>{" "}
@@ -67,7 +69,7 @@ function Hero({ hero }: { hero: HeroTypes[] }) {
               <motion.div
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1, delay: 1.5 }}
+                transition={{ duration: 1 }}
                 className="flex flex-wrap justify-center lg:justify-start gap-4 mt-6 mb-4"
               >
                 {item.buttonText.map((buttonText: ButtonText) => (
@@ -86,7 +88,7 @@ function Hero({ hero }: { hero: HeroTypes[] }) {
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1, delay: 1.3 }}
+              transition={{ duration: 1 }}
               className="flex justify-center lg:justify-end items-center mb-8 lg:mb-0"
             >
               <Image

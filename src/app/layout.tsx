@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import NavbarServer from "./components/Navbar/NavbarServer";
-import ScreenReveal from "./components/screenReveal/screenReveal";
-import FooterServer from "./components/Footer/FooterServer";
 import { Inter } from "next/font/google";
+import TopBar from "./components/TopScrollBar/TopBar";
+import NavbarServer from "./components/Navbar/NavbarServer";
+import FooterServer from "./components/Footer/FooterServer";
 import clsx from "clsx";
+import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,11 +26,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={clsx("bg-black", inter.variable)}>
-        <ScreenReveal>
-          <NavbarServer />
-          {children}
-          <FooterServer />
-        </ScreenReveal>
+        <TopBar />
+        <NavbarServer />
+        {children}
+        <FooterServer />
       </body>
     </html>
   );

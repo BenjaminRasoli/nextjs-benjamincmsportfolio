@@ -13,11 +13,11 @@ function ComponentText({ textData }: { textData: overViewText }) {
 
   return (
     <div>
-      <div className="max-w-3xl pb-10">
+      <div className="max-w-3xl pb-6">
         <motion.p
           initial={{ y: -50, opacity: 0 }}
           animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
-          transition={{ duration: 1, delay: 0.1 }}
+          transition={{ duration: 1 }}
           className="text-p text-white"
         >
           {textData.smallText}
@@ -25,7 +25,7 @@ function ComponentText({ textData }: { textData: overViewText }) {
         <motion.h1
           initial={{ y: 50, opacity: 0 }}
           animate={inView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
-          transition={{ duration: 1, delay: 0.1 }}
+          transition={{ duration: 1 }}
           className="text-h1 text-tertiary pb-6"
           ref={ref}
         >
@@ -34,7 +34,7 @@ function ComponentText({ textData }: { textData: overViewText }) {
         <motion.p
           initial={{ y: -50, opacity: 0 }}
           animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
-          transition={{ duration: 1, delay: 0.1 }}
+          transition={{ duration: 1 }}
           className="text-white pb-10"
         >
           {textData.longText}
