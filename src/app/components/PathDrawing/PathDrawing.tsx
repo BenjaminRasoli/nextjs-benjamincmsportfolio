@@ -1,4 +1,4 @@
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 export default function PathDrawingShapes() {
@@ -7,24 +7,9 @@ export default function PathDrawingShapes() {
     threshold: 0.1,
   });
 
-  const { scrollYProgress } = useScroll();
 
   return (
     <div className="flex items-start justify-center lg:justify-end w-full min-h-screen bg-transparent lg:pb-20">
-      <motion.div
-        id="scroll-indicator"
-        style={{
-          scaleX: scrollYProgress,
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: 10,
-          originX: 0,
-          zIndex: 10,
-          backgroundColor: "#4F46E5",
-        }}
-      />
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 200 400"

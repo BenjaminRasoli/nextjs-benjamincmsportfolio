@@ -6,9 +6,12 @@ import { urlFor } from "@/sanity/sanity.query";
 import { AnimatePresence, motion } from "framer-motion";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
+import { usePathname, useRouter } from "next/navigation";
 
 function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
   const [isOpen, setOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -39,6 +42,14 @@ function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
     return `https://cdn.sanity.io/files/${projectId}/${dataset}/${cleanFileRef}.pdf`;
   };
 
+  const handleClick = () => {
+    if (pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      router.push("/");
+    }
+  };
+
   return (
     <div className={"container z-20 sticky top-0 p-5"}>
       <div className="backdrop-blur-3xl flex py-2 px-4 items-start justify-between text-white rounded-lg transition-all">
@@ -46,12 +57,15 @@ function Navbar({ navbar }: { navbar: NavbarTypes[] }) {
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
+            transition={{ duration: 1 }}
             key={item._id}
             className="flex w-full justify-between"
           >
             <div className="flex flex-col items-start space-y-4">
-              <h1 className="text-xl font-bold text-tertiary">
+              <h1
+                onClick={handleClick}
+                className="text-xl font-bold cursor-pointer text-tertiary"
+              >
                 {item.mainTitle}
               </h1>
 

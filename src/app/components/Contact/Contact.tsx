@@ -128,10 +128,7 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
             <div className="text-white justify-center sm:justify-start md:w-[600px]">
               <form onSubmit={(e) => handleForm(e)} noValidate>
                 {contactText.contactForm.map((contactForm: ContactForm) => (
-                  <div
-                    className="flex flex-col pb-3 pt-3"
-                    key={contactForm._key}
-                  >
+                  <div className="flex flex-col pb-2" key={contactForm._key}>
                     <label className="pb-2">{contactForm.label}</label>
                     {contactForm.type === "textarea" ? (
                       <textarea
@@ -161,11 +158,11 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
                       <span>
                         <MdOutlineErrorOutline />
                       </span>
-                      {errors[contactForm._key] || "placeholder"}
+                      {errors[contactForm._key] || "Required"}
                     </p>
                   </div>
                 ))}
-                <div className="min-h-[48px] flex items-center">
+                <div className="min-h-[48px] flex justify-center sm:justify-start items-center">
                   <div
                     className={`flex items-center gap-1 transition-opacity duration-200 ${
                       loading ? "opacity-100" : "opacity-0 absolute"
@@ -210,7 +207,7 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
                     <span className="absolute inset-0 bg-white translate-x-[-100%] transition-transform duration-300 ease-in-out group-hover:translate-x-0"></span>
                     <span className="relative z-10 group-hover:text-black flex flex-row items-center gap-2">
                       {contactText.contactSendMessageButton.buttonText}
-                      <span className=" group-hover:filter group-hover:brightness-[0] group-hover:saturate-[100%]">
+                      <span className="group-hover:filter group-hover:brightness-[0] group-hover:saturate-[100%]">
                         <Image
                           src={
                             urlFor(
@@ -229,7 +226,7 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
                   {contactText.contactEmail.emailText && (
                     <a
                       href={`mailto:${contactText.contactEmail.emailText}`}
-                      className="ml-4 text-sm sm:text-base text-white hover:underline flex flex-row items-center gap-1"
+                      className="§text-sm sm:text-base text-white hover:underline flex flex-row items-center gap-1"
                     >
                       {contactText.contactEmail.emailText}
                       <span>

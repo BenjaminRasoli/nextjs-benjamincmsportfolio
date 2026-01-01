@@ -16,7 +16,7 @@ function VerticalTimeLineFunction({ work }: { work: WorkType }) {
       contentStyle={{
         background: "rgb(0, 0, 0)",
         color: "#ffffff",
-        border: "2px solid #ffffff",
+        border: "4px solid #ffffff",
         borderRadius: "12px",
         padding: "20px",
         boxShadow: "none",
@@ -25,6 +25,7 @@ function VerticalTimeLineFunction({ work }: { work: WorkType }) {
       date={work.date}
       iconStyle={{
         background: "#ffffff",
+        boxShadow: "none",
       }}
       icon={
         <div className="flex items-center justify-center w-full h-full">
@@ -33,7 +34,7 @@ function VerticalTimeLineFunction({ work }: { work: WorkType }) {
             alt="work image"
             width={80}
             height={80}
-            className="h-auto w-[30px] custom-lg-2:w-[40px] object-contain"
+            className="h-auto w-[25px] custom-lg-2:w-[38px] object-contain"
           />
         </div>
       }

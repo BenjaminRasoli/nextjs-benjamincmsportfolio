@@ -26,7 +26,7 @@ function AboutMe({ about }: { about: AboutMeTypes[] }) {
         <motion.div
           initial={{ y: -50, opacity: 0 }}
           animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
-          transition={{ duration: 1, delay: 0.1 }}
+          transition={{ duration: 1 }}
           ref={ref}
           className="flex items-start justify-center h-[250px] lg:h-[400px]"
         >
