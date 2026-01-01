@@ -1,12 +1,10 @@
 "use client";
-import { FooterTypes, SocialMedia } from "@/types";
+import { FooterTypes } from "@/types";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { IoMdHeart } from "react-icons/io";
 
 export default function Footer({ footerData }: { footerData: any }) {
-  const footer = footerData[0];
-
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
