@@ -13,7 +13,7 @@ function Hero({ hero }: { hero: HeroTypes[] }) {
     navigator.userAgent.toLowerCase().includes("firefox");
 
   return (
-    <div className="relative h-[100vh] w-full pt-5 pb-36 flex flex-col justify-center items-center text-white overflow-hidden">
+    <div className="relative w-full pt-2 lg:py-24 flex flex-col justify-center items-center text-white overflow-hidden">
       <div className="absolute inset-0 -z-10">
         {!isFirefox && <StarsBackground />}
       </div>
@@ -38,7 +38,7 @@ function Hero({ hero }: { hero: HeroTypes[] }) {
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 1.2 }}
-                className="text-5xl sm:text-6xl xl:text-8xl font-extrabold mb-6 leading-tight"
+                className="text-5xl sm:text-6xl font-extrabold mb-6 leading-tight"
               >
                 <span className="text-tertiary">{item.firstName}</span>{" "}
                 {item.lastName}
@@ -48,7 +48,11 @@ function Hero({ hero }: { hero: HeroTypes[] }) {
                 sequence={
                   item.textPhrases && item.textPhrases.length > 0
                     ? item.textPhrases.flatMap((p) => [p.textPhrase, 3000])
-                    : ["I create aesthetic and modern apps", 3000]
+                    : [
+                        "I create aesthetic and modern apps",
+                        "I build things for the web",
+                        3000,
+                      ]
                 }
                 wrapper="span"
                 cursor={true}
@@ -64,7 +68,7 @@ function Hero({ hero }: { hero: HeroTypes[] }) {
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 1.5 }}
-                className="flex flex-wrap justify-center lg:justify-start gap-4 mt-6"
+                className="flex flex-wrap justify-center lg:justify-start gap-4 mt-6 mb-4"
               >
                 {item.buttonText.map((buttonText: ButtonText) => (
                   <a
@@ -90,7 +94,7 @@ function Hero({ hero }: { hero: HeroTypes[] }) {
                 width={400}
                 height={400}
                 alt={item.mainText ?? "Hero image"}
-                className="rounded-full border-4 border-tertiary object-cover mt-32 lg:mt-0
+                className="rounded-full border-4 border-tertiary object-cover lg:mt-0
                            w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64"
               />
             </motion.div>
