@@ -4,7 +4,12 @@ import { BlogsType, BlogType } from "@/types";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 import Image from "next/image";
 
-export default async function Page({ params }: { params: { slug: string } }) {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const resolvedParams = await params;
   const allBlogs = await getBlogs();
 
   const blog: BlogsType = allBlogs.find((b: BlogType) => {
@@ -12,7 +17,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
       .toLowerCase()
       .replace(/\s+/g, "-")
       .replace(/[^\w-]+/g, "");
-    return slug === params.slug;
+    return slug === resolvedParams.slug;
   });
 
   if (!blog) {

@@ -79,7 +79,7 @@ function Blog({
                   )}
 
                   <div className="p-4 flex flex-col">
-                    <div className="flex justify-between items-center gap-4">
+                    <div className="flex justify-between items-center gap-8">
                       <h1 className="text-2xl font-semibold text-tertiary truncate flex-1 transition-opacity duration-300 group-hover:opacity-50">
                         {blog.blogName}
                       </h1>
