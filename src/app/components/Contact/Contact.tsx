@@ -120,7 +120,7 @@ function Contact({ contact }: { contact: ContactTypes[] }) {
     >
       <div className="container flex-col lg:flex-row flex justify-center lg:justify-between">
         {contact.map((contactText: ContactTypes) => (
-          <div className="pb-10" key={contactText._id}>
+          <div key={contactText._id}>
             <ComponentText
               key={contactText._id}
               textData={contactText.contactText}

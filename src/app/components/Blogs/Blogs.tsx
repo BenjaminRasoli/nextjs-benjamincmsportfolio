@@ -64,8 +64,12 @@ function Blog({
                 <motion.div
                   initial={{ y: 50, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
+                  transition={{
+                    duration: 0.5,
+                    ease: "easeInOut",
+                  }}
                   viewport={{ once: true }}
-                  className="group bg-gradient-to-b from-black via-secondary cursor-pointer rounded-2xl overflow-hidden border border-white"
+                  className="group bg-gradient-to-b from-black via-secondary cursor-pointer rounded-2xl overflow-hidden border-2 border-white"
                 >
                   {blog.blogImage && (
                     <div className="w-full h-48 relative">
@@ -83,9 +87,9 @@ function Blog({
                       {blog.tag}
                     </span>
 
-                      <h1 className="text-2xl py-2 line-clamp-2 h-[78px] font-semibold text-tertiary transition-opacity duration-300 group-hover:opacity-50">
-                        {blog.blogName}
-                      </h1>
+                    <h1 className="text-2xl py-2 line-clamp-2 h-[78px] font-semibold text-tertiary transition-opacity duration-300 group-hover:opacity-50">
+                      {blog.blogName}
+                    </h1>
 
                     <p className="text-xs text-white py-2">
                       {new Date(blog.publishedAt).toLocaleDateString("en-US", {

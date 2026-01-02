@@ -19,7 +19,7 @@ const WORK_QUERY = `*[_type == "work"] | order(position asc)`;
 const CONTAT_QUERY = `*[_type == "contact"]`;
 const FOOTER_QUERY = `*[_type == "footer"]`;
 const NOT_FOUND_QUERY = `*[_type == "notFound"]`;
-const BLOGS_QUERY = `*[_type == "blogs"]`;
+const BLOGS_QUERY = `*[_type == "blogs"] | order(publishedAt desc)`;
 const BLOGS_TEXT_QUERY = `*[_type == "blogsText"]`;
 
 const options = { next: { revalidate: 30 } };
