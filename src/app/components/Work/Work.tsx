@@ -16,7 +16,7 @@ function VerticalTimeLineFunction({ work }: { work: WorkType }) {
       contentStyle={{
         background: "rgb(0, 0, 0)",
         color: "#ffffff",
-        border: "4px solid #ffffff",
+        border: "2px solid #ffffff",
         borderRadius: "12px",
         padding: "20px",
         boxShadow: "none",
