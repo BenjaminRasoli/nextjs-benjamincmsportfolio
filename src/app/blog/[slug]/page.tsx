@@ -98,10 +98,10 @@ export default async function Page({
   return (
     <div className="w-full text-white -mt-[140px]">
       {blog.blogImage && (
-        <section className="relative w-full min-h-[70dvh] overflow-hidden">
+        <section className="relative w-full min-h-[70dvh] overflow-hidden bg-white">
           <Image
             src={urlFor(blog.blogImage).url() as string}
-            alt=""
+            alt={blog.blogName}
             fill
             priority
             className="object-cover object-center blur-sm"
@@ -129,7 +129,7 @@ export default async function Page({
             </div>
 
             <div className="relative w-full max-w-[800px] mx-auto pb-16 px-5">
-              <div className="relative w-full aspect-[16/9]">
+              <div className="relative w-full aspect-[16/10] bg-white rounded-xl">
                 <Image
                   src={urlFor(blog.blogImage).url() as string}
                   alt={blog.blogName}
