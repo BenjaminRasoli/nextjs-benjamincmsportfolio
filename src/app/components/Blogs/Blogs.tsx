@@ -72,12 +72,12 @@ function Blog({
                   className="group bg-gradient-to-b from-black via-secondary cursor-pointer rounded-2xl overflow-hidden border-2 border-white"
                 >
                   {blog.blogImage && (
-                    <div className="w-full h-48 relative">
+                    <div className="w-full h-[240px] bg-white relative overflow-hidden rounded-t-lg">
                       <Image
                         src={urlFor(blog.blogImage).url()}
                         alt={blog.blogName}
                         fill
-                        className="object-cover w-full h-full"
+                        className="object-cover object-center"
                       />
                     </div>
                   )}
