@@ -10,9 +10,37 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
 });
+
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://benjaminrasoli.vercel.app";
+
 export const metadata: Metadata = {
-  title: "Benjamin | Rasoli",
-  description: "Benjamin Rasoli's personal Portfolio",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Benjamin | Rasoli",
+    template: "%s | Benjamin Rasoli",
+  },
+  description:
+    "Benjamin Rasoli | full-stack developer portfolio showcasing projects, blog posts, and contact info.",
+  keywords: [
+    "Benjamin Rasoli",
+    "portfolio",
+    "software engineer",
+    "full-stack developer",
+    "web developer",
+    "React",
+    "Next.js",
+    "TypeScript",
+  ],
+  authors: [{ name: "Benjamin Rasoli", url: SITE_URL }],
+  creator: "Benjamin Rasoli",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      "max-image-preview": "large",
+    },
+  },
   icons: {
     icon: "/BrLogo.png",
   },
